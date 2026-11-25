@@ -9,5 +9,19 @@ import { InfoSection } from '../../components/infoSection/InfoSection';
 import { ShopSection } from '../../components/shopSection/ShopSection';
 
 export function HomePage() {
-  return <><Header /><main id="main-content"><Hero /><SectionNav /><TeamsSection /><PlanningSection /><LicenceSection /><InfoSection /><ShopSection /></main><Footer /></>;
+  return (
+    <>
+      <Header />
+      <main id="main-content">
+        <Hero />
+        <SectionNav />
+        <TeamsSection />
+        <PlanningSection />
+        <LicenceSection />
+        <InfoSection />
+        <ShopSection />
+      </main>
+      <Footer />
+    </>
+  );
 }

@@ -7,8 +7,26 @@ export const clubData: ClubData = {
     { id: 'senior', number: '03', labelKey: 'teams.adults', descriptionKey: 'teams.mixed' },
   ],
   sessions: [
-    { id: 'mini-wednesday', teamId: 'mini', dayKey: 'planning.wednesday', start: '14:00', end: '15:30' },
-    { id: 'youth-friday', teamId: 'youth', dayKey: 'planning.friday', start: '17:30', end: '19:00' },
-    { id: 'senior-tuesday', teamId: 'senior', dayKey: 'planning.tuesday', start: '20:00', end: '22:00' },
+    {
+      id: 'mini-wednesday',
+      teamId: 'mini',
+      dayKey: 'planning.wednesday',
+      start: '14:00',
+      end: '15:30',
+    },
+    {
+      id: 'youth-friday',
+      teamId: 'youth',
+      dayKey: 'planning.friday',
+      start: '17:30',
+      end: '19:00',
+    },
+    {
+      id: 'senior-tuesday',
+      teamId: 'senior',
+      dayKey: 'planning.tuesday',
+      start: '20:00',
+      end: '22:00',
+    },
   ],
 };

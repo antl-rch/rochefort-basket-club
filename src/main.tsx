@@ -8,4 +8,12 @@ import './utils/styles/global.scss';
 import App from './App';
 import { ClubProvider } from './context/club/ClubProvider';
 
-createRoot(document.getElementById('root')!).render(<StrictMode><BrowserRouter><ClubProvider><App /></ClubProvider></BrowserRouter></StrictMode>);
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter>
+      <ClubProvider>
+        <App />
+      </ClubProvider>
+    </BrowserRouter>
+  </StrictMode>,
+);

@@ -13,17 +13,34 @@ async function fillApplication(page: Page) {
 
 test('accueil, images locales et absence de débordement', async ({ page }, testInfo) => {
   const errors: string[] = [];
-  page.on('pageerror', error => errors.push(error.message));
+  page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
   await page.evaluate(async () => {
     await document.fonts.ready;
-    await Promise.all([...document.images].map(image => { image.loading = 'eager'; return image.decode(); }));
+    await Promise.all(
+      [...document.images].map((image) => {
+        image.loading = 'eager';
+        return image.decode();
+      }),
+    );
   });
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('ROCHEFORTBASKET CLUB');
   await expect(page.getByRole('table')).toContainText('Mercredi');
-  const assets = await page.locator('img').evaluateAll(images => images.map(image => ({ src: image.getAttribute('src'), loaded: image.complete && image.naturalWidth > 0, width: image.getBoundingClientRect().width, height: image.getBoundingClientRect().height })));
+  const assets = await page.locator('img').evaluateAll((images) =>
+    images.map((image) => ({
+      src: image.getAttribute('src'),
+      loaded: image.complete && image.naturalWidth > 0,
+      width: image.getBoundingClientRect().width,
+      height: image.getBoundingClientRect().height,
+    })),
+  );
   expect(assets).toHaveLength(12);
-  expect(assets.every(asset => asset.loaded && asset.src?.startsWith('/images/') && asset.width > 0 && asset.height > 0)).toBe(true);
+  expect(
+    assets.every(
+      (asset) =>
+        asset.loaded && asset.src?.startsWith('/images/') && asset.width > 0 && asset.height > 0,
+    ),
+  ).toBe(true);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   expect(errors).toEqual([]);
   await page.screenshot({ path: `artifacts/home-${testInfo.project.name}.png`, fullPage: true });
@@ -57,14 +74,20 @@ test('validation des champs et signature réelle, retour et export', async ({ pa
   await page.mouse.move(box.x + 95, box.y + 60, { steps: 8 });
   await page.mouse.up();
   await expect(validate).toBeEnabled();
-  await page.screenshot({ path: `artifacts/signature-${testInfo.project.name}.png`, fullPage: true });
+  await page.screenshot({
+    path: `artifacts/signature-${testInfo.project.name}.png`,
+    fullPage: true,
+  });
   await validate.click();
   await expect(page.getByText('camille@example.com', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Retour', exact: true }).click();
   await expect(validate).toBeEnabled();
-  const hasInk = await canvas.evaluate(canvas => {
+  const hasInk = await canvas.evaluate((canvas) => {
     const element = canvas as HTMLCanvasElement;
-    return element.getContext('2d')!.getImageData(0, 0, element.width, element.height).data.some((value, index) => index % 4 === 3 && value > 0);
+    return element
+      .getContext('2d')!
+      .getImageData(0, 0, element.width, element.height)
+      .data.some((value, index) => index % 4 === 3 && value > 0);
   });
   expect(hasInk).toBe(true);
   await validate.click();
@@ -93,8 +116,14 @@ test('responsive aux largeurs intermédiaires et étroites', async ({ page }) =>
   for (const width of [320, 768, 1024]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `overflow at ${width}px`).toBe(true);
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+      `overflow at ${width}px`,
+    ).toBe(true);
     await page.getByRole('button', { name: 'EN', exact: true }).click();
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `EN overflow at ${width}px`).toBe(true);
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+      `EN overflow at ${width}px`,
+    ).toBe(true);
   }
 });

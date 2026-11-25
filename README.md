@@ -17,6 +17,7 @@ Site : http://127.0.0.1:5178. Routes : `/` et `/licence`.
 npm run build
 npm run preview
 npm run lint
+npm run format:check
 npm test
 ```
 
