@@ -1,0 +1,40 @@
+.header--licence .header__inner { min-height: 72px; }
+.header--licence .brand img { width: 40px; height: 40px; }
+.header--licence .brand span { font-size: 14px; line-height: 15px; }
+.licence-page { padding-block: 54px; }
+.licence-panel { width: min(100%, 720px); margin-inline: auto; padding: 34px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.licence-panel h1 { font-size: 38px; line-height: 42px; letter-spacing: -.5px; outline: none; }
+.licence-panel > p:not(.eyebrow) { font-size: 17px; line-height: 26px; }
+.licence-page > .language-switcher { justify-content: center; margin-top: 24px; }
+.licence-form { width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 13px; }
+.form-grid { width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px 20px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.form-field:last-child { grid-column: 1 / -1; }
+.form-field label { font-weight: 700; font-size: 14px; line-height: 18px; }
+input, select { width: 100%; color: var(--ink); background: var(--white); border: 1px solid var(--line); border-radius: 3px; padding: 11px 13px; min-height: 45px; font-size: 15px; line-height: 21px; }
+.signature-field { width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 13px; }
+.signature-field__box { width: 100%; background: var(--white); border: 1px solid var(--orange); border-radius: 3px; padding-top: 34px; position: relative; }
+.signature-field__box > span { position: absolute; left: 13px; top: 12px; font-size: 11px; font-weight: 700; line-height: 14px; pointer-events: none; }
+.signature-field canvas { display: block; width: 100%; height: 146px; touch-action: none; }
+.signature-field details { width: 100%; font-size: 13px; }
+.signature-field summary { cursor: pointer; }
+.signature-field details input { margin-block: 12px; }
+.signature-field details .button { font-size: 13px; }
+.licence-actions { width: 100%; display: flex; align-items: center; gap: 13px; flex-wrap: wrap; }
+.licence-actions .text-link { font-size: 13px; }
+.licence-summary { background: var(--soft); padding: 17px; display: flex; flex-direction: column; gap: 8px; width: 100%; overflow-wrap: anywhere; }
+.licence-summary strong { font-size: 17px; line-height: 23px; }
+.licence-summary p { font-size: 15px; line-height: 20px; }
+.licence-summary img { width: min(100%, 320px); height: 100px; object-fit: contain; object-position: left center; }
+@media (max-width: 767px) {
+  .header--licence .header__inner { min-height: 56px; }
+  .header--licence .brand img { width: 32px; height: 32px; }
+  .header--licence .brand span { font-size: 12px; line-height: 13px; }
+  .licence-page { padding-block: 27px; }
+  .licence-panel { padding: 22px; gap: 13px; }
+  .licence-panel h1 { font-size: 28px; line-height: 32px; }
+  .licence-panel > p:not(.eyebrow) { font-size: 15px; line-height: 24px; }
+  .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .signature-field canvas { height: 84px; }
+  .licence-actions .button { padding-inline: 14px; }
+}

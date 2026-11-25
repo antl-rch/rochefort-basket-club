@@ -1,0 +1,2119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rochefort Basket Club — Maquette Officielle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #F8F6F1;
+      --bg-center: #FDFCFA;
+      --bg-card: #FFFFFF;
+      --bg-subtle: #F1EDE4;
+      --text-title: #01009E;
+      --text-body: #01009E;
+      --accent: #FF7C32;
+      --accent-soft: rgba(255, 124, 50, 0.10);
+      --accent-border: #FF7C32;
+      --border-muted: rgba(1, 0, 158, 0.10);
+      --black: #01009E;
+      --white: #FFFFFF;
+      --success: #188038;
+      --error: #D93025;
+      --error-bg: #FCE8E6;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-card: 0 14px 34px rgba(1, 0, 158, 0.05);
+      --shadow-accent: 0 12px 28px rgba(255, 124, 50, 0.18);
+      --max-w: 1280px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-body);
+      background-color: var(--bg-base);
+      /* Gradient très léger plus clair vers le centre, quasi imperceptible */
+      background-image:
+        radial-gradient(ellipse 75% 55% at 50% 28%, var(--bg-center) 0%, #FAF8F4 55%, var(--bg-base) 100%),
+        radial-gradient(ellipse 65% 45% at 50% 78%, #FCFBF8 0%, var(--bg-base) 100%);
+      background-attachment: fixed;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, strong, b, .font-bold {
+      color: var(--text-title);
+      font-weight: 800;
+    }
+
+    .display-title {
+      font-family: 'Nunito', sans-serif;
+      letter-spacing: 0.03em;
+      line-height: 0.96;
+      color: var(--text-title);
+      text-transform: uppercase;
+    }
+
+    .accent-text {
+      color: var(--accent);
+    }
+
+    .accent-underline {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 124, 50, 0.35);
+      text-underline-offset: 6px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: 28px;
+    }
+
+    /* Visually hidden utility for live region */
+    .visually-hidden:where(:not(:focus-within, :active)) {
+      position: absolute !important;
+      clip-path: inset(50%) !important;
+      overflow: hidden !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    /* ==========================================================================
+       HEADER (#01009E background, #FFFFFF text, nav CTA #FF7C32)
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #01009E;
+      color: #FFFFFF;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 84px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+
+    .brand-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      background-color: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.65rem;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+
+    .brand-sub {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .main-nav a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      color: var(--accent);
+    }
+
+    .nav-shop-badge {
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: #FFFFFF;
+      background: rgba(255, 124, 50, 0.22);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Bouton de nav dans le header en #FF7C32 avec texte en #FFFFFF */
+    .btn-nav-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #FF7C32;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 2px solid #FF7C32;
+      box-shadow: var(--shadow-accent);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .btn-nav-accent:hover {
+      transform: translateY(-1px);
+      background-color: #e03800;
+    }
+
+    /* Boutons standards en #01009E avec texte en #FFFFFF */
+    .btn-black {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #01009E;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.96rem;
+      padding: 14px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 2px solid #01009E;
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-black:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 20px rgba(1, 0, 158, 0.16);
+    }
+
+    .btn-accent {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #FF7C32;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.96rem;
+      padding: 14px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 2px solid #FF7C32;
+      cursor: pointer;
+      box-shadow: var(--shadow-accent);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-1px);
+      background-color: #e03800;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding: 68px 0 76px;
+      overflow: hidden;
+    }
+
+    /* Subtle court lines watermark in background */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='900' height='520' viewBox='0 0 900 520' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='720' cy='260' r='180' stroke='%23FF4104' stroke-opacity='0.08' stroke-width='2'/%3E%3Ccircle cx='720' cy='260' r='70' stroke='%23000000' stroke-opacity='0.05' stroke-width='2' stroke-dasharray='6 6'/%3E%3Cpath d='M520 40H880V480H520' stroke='%23000000' stroke-opacity='0.05' stroke-width='2'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right center;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.85fr;
+      gap: 44px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      border: 1.5px solid var(--accent);
+      color: var(--text-title);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent);
+    }
+
+    .hero h1 {
+      font-size: clamp(3.1rem, 5.5vw, 4.9rem);
+      margin-bottom: 20px;
+    }
+
+    .hero-lead {
+      font-size: 1.12rem;
+      color: var(--text-body);
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 38px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-muted);
+    }
+
+    .stat-item strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.35rem;
+      line-height: 1;
+      color: #01009E;
+    }
+
+    .stat-item strong span {
+      color: var(--accent);
+    }
+
+    .stat-item p {
+      font-size: 0.86rem;
+      color: var(--text-body);
+      font-weight: 600;
+    }
+
+    /* Hero Right Card — Prochain Match & Identité Club */
+    .hero-showcase-card {
+      background: var(--bg-card);
+      border: 2px solid var(--accent-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+
+    .match-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .live-pill {
+      background-color: var(--accent);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .match-date {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-body);
+    }
+
+    .club-crest-showcase {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 16px;
+      padding: 22px 16px;
+      background: radial-gradient(circle at center, #FFFFFF 0%, #F8F6F1 100%);
+      border: 1px solid rgba(255, 124, 50, 0.25);
+      border-radius: var(--radius-md);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .team-side img {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      margin-bottom: 8px;
+      background: #fff;
+    }
+
+    .opponent-avatar {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: #01009E;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      border: 2px solid #01009E;
+      margin-inline: auto;
+      margin-bottom: 8px;
+    }
+
+    .team-side h3 {
+      font-size: 0.95rem;
+      color: #01009E;
+    }
+
+    .team-side span {
+      font-size: 0.78rem;
+      color: var(--text-body);
+    }
+
+    .vs-badge {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid var(--accent);
+    }
+
+    .match-meta-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .match-location {
+      font-size: 0.86rem;
+      color: var(--text-body);
+    }
+
+    .match-location strong {
+      color: #01009E;
+      display: block;
+    }
+
+    /* ==========================================================================
+       SECTION HEADINGS
+       ========================================================================== */
+    section {
+      padding: 72px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      margin-top: 6px;
+    }
+
+    .section-subtitle {
+      max-width: 540px;
+      color: var(--text-body);
+      font-size: 1rem;
+    }
+
+    /* ==========================================================================
+       SECTION ÉQUIPES (Senior, Jeunes, U12, Senior Filles, etc.)
+       ========================================================================== */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      background: #01009E;
+      color: #FFFFFF;
+      border: 1.5px solid #01009E;
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+
+    .teams-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .team-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--accent-border);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(255, 124, 50, 0.12);
+    }
+
+    .team-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .category-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .division-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #01009E;
+      background: var(--bg-subtle);
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+
+    .team-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+      color: #01009E;
+    }
+
+    .team-card p {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      margin-bottom: 18px;
+    }
+
+    .team-meta-list {
+      list-style: none;
+      border-top: 1px solid var(--border-muted);
+      padding-top: 14px;
+      margin-bottom: 20px;
+      display: grid;
+      gap: 8px;
+      font-size: 0.86rem;
+    }
+
+    .team-meta-list li {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-body);
+    }
+
+    .team-meta-list li strong {
+      color: #01009E;
+    }
+
+    /* ==========================================================================
+       SECTION PLANNING (Responsive Data Table + Match Schedule)
+       ========================================================================== */
+    .planning-layout {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .table-wrapper {
+      overflow: auto;
+      max-inline-size: 100%;
+      max-block-size: min(540px, 80vh);
+      container-type: inline-size;
+      background: var(--bg-card);
+      border: 1.5px solid var(--accent-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+    }
+
+    table.planning-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    table.planning-table caption {
+      padding: 18px 22px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #01009E;
+      text-align: left;
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-muted);
+    }
+
+    table.planning-table thead {
+      position: sticky;
+      inset-block-start: 0;
+      z-index: 1;
+      background: #01009E;
+      color: #FFFFFF;
+    }
+
+    table.planning-table thead th {
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #FFFFFF;
+    }
+
+    table.planning-table tbody tr {
+      border-bottom: 1px solid var(--border-muted);
+    }
+
+    table.planning-table tbody th {
+      position: sticky;
+      inset-inline-start: 0;
+      background: #FFFFFF;
+      color: #01009E;
+      font-weight: 800;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-muted);
+    }
+
+    table.planning-table tbody td {
+      padding: 14px 18px;
+      color: var(--text-body);
+      border-bottom: 1px solid var(--border-muted);
+      white-space: nowrap;
+    }
+
+    .gym-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(255, 124, 50, 0.35);
+    }
+
+    @container (width < 600px) {
+      table.planning-table,
+      table.planning-table thead,
+      table.planning-table tbody,
+      table.planning-table tr,
+      table.planning-table th,
+      table.planning-table td {
+        display: block;
+      }
+
+      table.planning-table thead {
+        display: none;
+      }
+
+      table.planning-table tr {
+        margin-block-end: 1rem;
+        border: 1px solid var(--accent-border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      table.planning-table tbody th {
+        position: sticky;
+        inset-block-start: 0;
+        z-index: 2;
+        background: var(--bg-subtle);
+      }
+
+      table.planning-table {
+        --label-2: "Jour";
+        --label-3: "Horaires";
+        --label-4: "Salle";
+      }
+
+      table.planning-table td:nth-child(2)::before {
+        content: var(--label-2) ": ";
+        font-weight: 700;
+        color: #01009E;
+      }
+
+      table.planning-table td:nth-child(3)::before {
+        content: var(--label-3) ": ";
+        font-weight: 700;
+        color: #01009E;
+      }
+
+      table.planning-table td:nth-child(4)::before {
+        content: var(--label-4) ": ";
+        font-weight: 700;
+        color: #01009E;
+      }
+    }
+
+    .weekend-matches-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--accent-border);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .weekend-matches-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .fixture-list {
+      display: grid;
+      gap: 14px;
+      margin: 18px 0 22px;
+    }
+
+    .fixture-item {
+      padding: 14px;
+      border-radius: 12px;
+      background: var(--bg-base);
+      border-left: 4px solid var(--accent);
+    }
+
+    .fixture-item .fixture-time {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .fixture-item strong {
+      display: block;
+      font-size: 0.96rem;
+      margin: 2px 0;
+    }
+
+    .fixture-item span {
+      font-size: 0.82rem;
+      color: var(--text-body);
+    }
+
+    /* ==========================================================================
+       SECTION CRÉER & SIGNER SA LICENCE (Interactive Form + Signature Pad)
+       ========================================================================== */
+    .licence-section {
+      position: relative;
+    }
+
+    .licence-wrapper {
+      background: var(--bg-card);
+      border: 2px solid var(--accent-border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+    }
+
+    .licence-steps {
+      display: grid;
+      gap: 18px;
+      margin: 26px 0;
+    }
+
+    .step-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-base);
+      border: 1px solid rgba(255, 124, 50, 0.25);
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-card h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .step-card p {
+      font-size: 0.86rem;
+      color: var(--text-body);
+    }
+
+    .licence-form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #01009E;
+      margin-bottom: 4px;
+    }
+
+    .hint {
+      display: block;
+      color: var(--text-body);
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(1, 0, 158, 0.2);
+      background: var(--bg-base);
+      font-family: inherit;
+      font-size: 0.94rem;
+      color: #01009E;
+      transition: border-color 0.15s ease;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: #FFFFFF;
+    }
+
+    /* Validation after interaction (:user-invalid) */
+    :is(:user-invalid, .user-invalid-fallback) {
+      border-color: var(--error) !important;
+      background-color: var(--error-bg) !important;
+    }
+
+    :is(:user-valid, .user-valid-fallback) {
+      border-color: var(--success) !important;
+    }
+
+    .error-msg {
+      display: none;
+      color: var(--error);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    :is(:user-invalid, .user-invalid-fallback) + .error-msg {
+      display: block;
+    }
+
+    /* Electronic signature pad */
+    .signature-box {
+      border: 1.5px dashed var(--accent-border);
+      border-radius: 12px;
+      background: var(--bg-base);
+      padding: 14px;
+    }
+
+    .signature-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .signature-header span {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #01009E;
+    }
+
+    .btn-clear-sig {
+      background: #01009E;
+      color: #FFFFFF;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    canvas#signature-pad {
+      width: 100%;
+      height: 120px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      border: 1px solid var(--border-muted);
+      cursor: crosshair;
+      touch-action: none;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.86rem;
+      color: var(--text-body);
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--accent);
+    }
+
+    .licence-status-banner {
+      display: none;
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: rgba(24, 128, 56, 0.1);
+      border: 1.5px solid var(--success);
+      color: #01009E;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* ==========================================================================
+       SECTION BOUTIQUE MARCHANDE (Redirection Site Marchand)
+       ========================================================================== */
+    .shop-banner {
+      background: var(--bg-card);
+      border: 2px solid var(--accent-border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .shop-products-preview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .merch-item {
+      background: var(--bg-base);
+      border: 1.5px solid var(--accent-border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .merch-illustration {
+      height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .merch-item h4 {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .merch-price {
+      font-weight: 800;
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       SECTION ARTICLES / COMPOSANTS EN BAS DE PAGE AVEC IMAGES EN BACKGROUND LÉGER
+       ========================================================================== */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .article-card {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--bg-card);
+      border: 1.5px solid var(--accent-border);
+      border-radius: var(--radius-md);
+      padding: 30px 26px;
+      box-shadow: var(--shadow-card);
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Image en background léger derrière l'article */
+    .article-bg-layer {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.14;
+      pointer-events: none;
+      z-index: 0;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .article-card:hover .article-bg-layer {
+      transform: scale(1.04);
+      opacity: 0.20;
+    }
+
+    .article-bg-1 {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23F8F6F1'/%3E%3Ccircle cx='460' cy='120' r='110' fill='%23FF4104' fill-opacity='0.45'/%3E%3Cpath d='M350 120 H570 M460 10 V230' stroke='%23000000' stroke-width='5'/%3E%3Cpath d='M380 45 C430 95, 430 145, 380 195' stroke='%23000000' stroke-width='5' fill='none'/%3E%3Cpath d='M540 45 C490 95, 490 145, 540 195' stroke='%23000000' stroke-width='5' fill='none'/%3E%3Crect x='40' y='260' width='520' height='100' rx='16' stroke='%23000000' stroke-width='4' fill='none'/%3E%3C/svg%3E");
+    }
+
+    .article-bg-2 {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23F8F6F1'/%3E%3Cpath d='M80 350 L300 60 L520 350 Z' fill='%23FF4104' fill-opacity='0.35'/%3E%3Ccircle cx='300' cy='210' r='90' stroke='%23000000' stroke-width='6' fill='none'/%3E%3Cline x1='150' y1='210' x2='450' y2='210' stroke='%23000000' stroke-width='5'/%3E%3C/svg%3E");
+    }
+
+    .article-bg-3 {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23F8F6F1'/%3E%3Crect x='90' y='50' width='420' height='260' rx='18' stroke='%23000000' stroke-width='6' fill='none'/%3E%3Crect x='220' y='130' width='160' height='110' stroke='%23FF4104' stroke-width='6' fill='none'/%3E%3Ccircle cx='300' cy='250' r='36' fill='%23FF4104' fill-opacity='0.5'/%3E%3C/svg%3E");
+    }
+
+    .article-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .article-date {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .article-card h3 {
+      font-size: 1.32rem;
+      margin-bottom: 12px;
+      color: #01009E;
+    }
+
+    .article-card p {
+      font-size: 0.94rem;
+      color: var(--text-body);
+      margin-bottom: 20px;
+    }
+
+    .article-footer {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(1, 0, 158, 0.12);
+      padding-top: 14px;
+    }
+
+    /* ==========================================================================
+       SECTION INFOS PRATIQUES (Adresse, Contact, Horaires, Accès)
+       ========================================================================== */
+    .infos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--accent-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .info-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+
+    .info-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .info-card p,
+    .info-card li {
+      font-size: 0.92rem;
+      color: var(--text-body);
+    }
+
+    .info-card ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    /* ==========================================================================
+       FOOTER (#01009E background, #FFFFFF text)
+       ========================================================================== */
+    .site-footer {
+      background: #01009E;
+      color: #FFFFFF;
+      border-top: 3px solid var(--accent);
+      padding: 56px 0 36px;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+
+    .site-footer h4 {
+      color: #FFFFFF;
+      font-size: 1rem;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .site-footer p,
+    .site-footer a {
+      color: rgba(255, 255, 255, 0.78);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .site-footer ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .site-footer a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .planning-layout,
+      .licence-wrapper,
+      .shop-banner,
+      .teams-grid,
+      .articles-grid,
+      .infos-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .main-nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER (#01009E background, #FFFFFF text, nav CTA #FF7C32)
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <img src="logo-rochefort-basket.jpg" alt="Logo Rochefort Basket Club" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">ROCHEFORT BASKET CLUB</span>
+          <span class="brand-sub">Les Lions de Charente-Maritime • FFBB</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navigation principale">
+        <ul class="main-nav">
+          <li><a href="#equipes">Équipes</a></li>
+          <li><a href="#planning">Planning</a></li>
+          <li><a href="#licence">Licence &amp; Signature</a></li>
+          <li>
+            <a href="#boutique" data-merchant-link="true">
+              Boutique Marchande
+              <span class="nav-shop-badge">Externe ↗</span>
+            </a>
+          </li>
+          <li><a href="#actualites">Actualités</a></li>
+          <li><a href="#infos">Infos Pratiques</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#licence" class="btn-nav-accent">Créer ma licence →</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         HERO SECTION
+         ====================================================================== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow-pill">
+            <span class="eyebrow-dot"></span>
+            Saison 2026 / 2027 • Inscriptions Ouvertes
+          </div>
+          <h1 class="display-title">
+            LA RAGE DU <span class="accent-text">LION</span>,<br>
+            L'ESPRIT COLLECTIF À <span class="accent-underline">ROCHEFORT</span>
+          </h1>
+          <p class="hero-lead">
+            Du Mini-Basket U7 aux équipes <strong>Seniors Régionales</strong>, rejoignez le
+            <strong>Rochefort Basket Club</strong>. Créez et signez votre licence en ligne,
+            consultez les plannings d'entraînement et portez fièrement nos couleurs.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#licence" class="btn-black">Créer &amp; signer ma licence</a>
+            <a href="#boutique" class="btn-accent" data-merchant-link="true">Boutique Officielle ↗</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <strong>340<span>+</span></strong>
+              <p>Licenciés FFBB actifs</p>
+            </div>
+            <div class="stat-item">
+              <strong>14<span></span></strong>
+              <p>Équipes engagées (U7 à Senior)</p>
+            </div>
+            <div class="stat-item">
+              <strong>100<span>%</span></strong>
+              <p>Licence &amp; signature digitale</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-showcase-card" aria-label="Prochain match à domicile">
+          <div class="match-badge-row">
+            <span class="live-pill">Prochain Match à Domicile</span>
+            <span class="match-date">Samedi 21 Nov. • 20h30</span>
+          </div>
+          <div class="club-crest-showcase">
+            <div class="team-side">
+              <img src="logo-rochefort-basket.jpg" alt="Rochefort Basket Club">
+              <h3>ROCHEFORT BC</h3>
+              <span>Senior Masc. RM2</span>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team-side">
+              <div class="opponent-avatar">LR</div>
+              <h3>LA ROCHELLE B2</h3>
+              <span>Derby Maritime</span>
+            </div>
+          </div>
+          <div class="match-meta-footer">
+            <div class="match-location">
+              <strong>Gymnase du Polygone — Rochefort</strong>
+              Entrée gratuite pour les licenciés • Buvette sur place
+            </div>
+            <a href="#planning" class="btn-black">Voir le calendrier</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION ÉQUIPES (Senior, Jeune, U12, Senior Filles, etc.)
+         ====================================================================== -->
+    <section id="equipes">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow-pill"><span class="eyebrow-dot"></span> Nos Collectifs FFBB</span>
+            <h2 class="display-title">LES <span class="accent-text">ÉQUIPES</span> DU CLUB</h2>
+            <p class="section-subtitle">
+              Formation jeune, compétition régionale et pratique loisir : découvrez toutes les catégories du
+              <strong>Rochefort Basket Club</strong>.
+            </p>
+          </div>
+          <div class="filter-bar" role="group" aria-label="Filtrer par catégorie">
+            <button type="button" class="filter-btn active" data-filter="all">Toutes (14)</button>
+            <button type="button" class="filter-btn" data-filter="senior">Seniors</button>
+            <button type="button" class="filter-btn" data-filter="jeune">Jeunes (U11–U18)</button>
+            <button type="button" class="filter-btn" data-filter="mini">Mini-Basket &amp; Loisir</button>
+          </div>
+        </div>
+
+        <div class="teams-grid" id="teams-grid">
+          <!-- Card 1 -->
+          <article class="team-card" data-category="senior">
+            <div>
+              <div class="team-card-top">
+                <span class="category-tag">Senior Masculins</span>
+                <span class="division-pill">Régionale RM2</span>
+              </div>
+              <h3>Seniors Garçons 1 &amp; 2</h3>
+              <p>L'équipe fanion masculine engagée en championnat Régional Nouvelle-Aquitaine et réserve départementale.</p>
+              <ul class="team-meta-list">
+                <li><span>Entraîneur</span><strong>Marc Delaunay (DEFB)</strong></li>
+                <li><span>Créneaux</span><strong>Mar. &amp; Ven. 20h00 – 22h00</strong></li>
+                <li><span>Gymnase</span><strong>Salle du Polygone</strong></li>
+              </ul>
+            </div>
+            <a href="#licence" class="btn-black">Rejoindre ce groupe</a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="team-card" data-category="senior">
+            <div>
+              <div class="team-card-top">
+                <span class="category-tag">Senior Filles</span>
+                <span class="division-pill">Régionale RF2</span>
+              </div>
+              <h3>Seniors Filles 1 &amp; 2</h3>
+              <p>Collectif féminin ambitieux alliant joueuses expérimentées et jeunes issues de la formation rochefortaise.</p>
+              <ul class="team-meta-list">
+                <li><span>Entraîneure</span><strong>Sophie Vallet (CQP)</strong></li>
+                <li><span>Créneaux</span><strong>Mer. &amp; Ven. 19h30 – 21h15</strong></li>
+                <li><span>Gymnase</span><strong>Salle du Polygone</strong></li>
+              </ul>
+            </div>
+            <a href="#licence" class="btn-black">Rejoindre ce groupe</a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="team-card" data-category="jeune">
+            <div>
+              <div class="team-card-top">
+                <span class="category-tag">Jeunes U17 / U18</span>
+                <span class="division-pill">Inter-Départemental</span>
+              </div>
+              <h3>U18 Garçons &amp; U18 Filles</h3>
+              <p>Préparation directe aux équipes Seniors avec travail athlétique, lecture de jeu et haute intensité.</p>
+              <ul class="team-meta-list">
+                <li><span>Entraîneur</span><strong>Lucas Bernard</strong></li>
+                <li><span>Créneaux</span><strong>Mer. 17h30 &amp; Ven. 18h00</strong></li>
+                <li><span>Années</span><strong>2009 – 2010</strong></li>
+              </ul>
+            </div>
+            <a href="#licence" class="btn-black">Inscrire en U18</a>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="team-card" data-category="jeune">
+            <div>
+              <div class="team-card-top">
+                <span class="category-tag">Jeunes U13 / U15</span>
+                <span class="division-pill">Départemental D1</span>
+              </div>
+              <h3>Minimes U15 &amp; Benjamins U13</h3>
+              <p>Perfectionnement technique individuel, fondamentaux collectifs et championnat officiel chaque samedi.</p>
+              <ul class="team-meta-list">
+                <li><span>Entraîneur</span><strong>Thomas Giraud</strong></li>
+                <li><span>Créneaux</span><strong>Mar. 18h00 &amp; Jeu. 18h00</strong></li>
+                <li><span>Années</span><strong>2011 – 2014</strong></li>
+              </ul>
+            </div>
+            <a href="#licence" class="btn-black">Inscrire en U13 / U15</a>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="team-card" data-category="jeune">
+            <div>
+              <div class="team-card-top">
+                <span class="category-tag">Poussins U11 / U12</span>
+                <span class="division-pill">Plateaux 17</span>
+              </div>
+              <h3>Équipes U11 &amp; U12 Mixtes</h3>
+              <p>Apprentissage du dribble, du tir en course et de l'esprit d'équipe dans un cadre ludique et formateur.</p>
+              <ul class="team-meta-list">
+                <li><span>Entraîneure</span><strong>Camille Moreau</strong></li>
+                <li><span>Créneaux</span><strong>Mercredi 15h30 – 17h00</strong></li>
+                <li><span>Années</span><strong>2015 – 2016</strong></li>
+              </ul>
+            </div>
+            <a href="#licence" class="btn-black">Inscrire en U11 / U12</a>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="team-card" data-category="mini">
+            <div>
+              <div class="team-card-top">
+                <span class="category-tag">École Mini-Basket &amp; Loisir</span>
+                <span class="division-pill">Label FFBB</span>
+              </div>
+              <h3>Baby U7, Mini U9 &amp; Basket Loisir</h3>
+              <p>Éveil moteur dès 5 ans le mercredi après-midi et créneau Basket Loisir mixte sans contrainte de compétition.</p>
+              <ul class="team-meta-list">
+                <li><span>Encadrement</span><strong>Staff Diplômé FFBB</strong></li>
+                <li><span>Créneaux</span><strong>Mer. 14h00 (U7/U9) • Jeu. 20h30 (Loisir)</strong></li>
+                <li><span>Public</span><strong>Dès 5 ans &amp; Adultes</strong></li>
+              </ul>
+            </div>
+            <a href="#licence" class="btn-black">Inscrire en Mini / Loisir</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION PLANNING (Entraînements & Matchs)
+         ====================================================================== -->
+    <section id="planning">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow-pill"><span class="eyebrow-dot"></span> Organisation Hebdomadaire</span>
+            <h2 class="display-title">PLANNING DES <span class="accent-text">ENTRAÎNEMENTS</span> &amp; MATCHS</h2>
+            <p class="section-subtitle">
+              Retrouvez tous les créneaux par catégorie au Gymnase du Polygone et à la Salle Champlain.
+            </p>
+          </div>
+        </div>
+
+        <div class="planning-layout">
+          <div tabindex="0" role="region" aria-labelledby="planning-table-caption" class="table-wrapper">
+            <table class="planning-table">
+              <caption id="planning-table-caption">Grille officielle des entraînements — Saison 2026/2027</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Catégorie / Équipe</th>
+                  <th scope="col">Jour</th>
+                  <th scope="col">Horaires</th>
+                  <th scope="col">Gymnase</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Baby &amp; Mini-Basket (U7 / U9)</th>
+                  <td>Mercredi</td>
+                  <td>14h00 – 15h30</td>
+                  <td><span class="gym-badge">Polygone</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Poussins U11 / U12 Filles &amp; Garçons</th>
+                  <td>Mercredi &amp; Vendredi</td>
+                  <td>15h30 – 17h00 / 17h15 – 18h30</td>
+                  <td><span class="gym-badge">Polygone</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Benjamins U13 &amp; Minimes U15</th>
+                  <td>Mardi &amp; Jeudi</td>
+                  <td>18h00 – 19h30</td>
+                  <td><span class="gym-badge">Polygone</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Cadets U17 / U18 (M &amp; F)</th>
+                  <td>Mercredi &amp; Vendredi</td>
+                  <td>17h30 – 19h15</td>
+                  <td><span class="gym-badge">Salle Champlain</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Seniors Filles (RF2 &amp; DF1)</th>
+                  <td>Mercredi &amp; Vendredi</td>
+                  <td>19h30 – 21h15</td>
+                  <td><span class="gym-badge">Polygone</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Seniors Garçons (RM2 &amp; DM1)</th>
+                  <td>Mardi &amp; Vendredi</td>
+                  <td>20h00 – 22h00</td>
+                  <td><span class="gym-badge">Polygone</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Section Basket Loisir Mixte</th>
+                  <td>Jeudi</td>
+                  <td>20h30 – 22h15</td>
+                  <td><span class="gym-badge">Salle Champlain</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <aside class="weekend-matches-card" aria-label="Agenda du week-end">
+            <span class="category-tag">Week-end du 21 &amp; 22 Novembre</span>
+            <h3 style="margin-top: 10px;">Programme des Matchs</h3>
+            <p style="font-size: 0.88rem;">Venez encourager les Lions au Gymnase du Polygone !</p>
+            <div class="fixture-list">
+              <div class="fixture-item">
+                <span class="fixture-time">Samedi 14h30 • Domicile</span>
+                <strong>U12 Mixte vs Saintes BB</strong>
+                <span>Plateau Charente-Maritime</span>
+              </div>
+              <div class="fixture-item">
+                <span class="fixture-time">Samedi 17h30 • Domicile</span>
+                <strong>Senior Filles RF2 vs Niort Basket</strong>
+                <span>Championnat Régional Féminin</span>
+              </div>
+              <div class="fixture-item">
+                <span class="fixture-time">Samedi 20h30 • Domicile</span>
+                <strong>Senior Garçons RM2 vs La Rochelle 2</strong>
+                <span>Soirée Partenaires &amp; Buvette</span>
+              </div>
+            </div>
+            <a href="#infos" class="btn-black" style="width: 100%;">Itinéraire vers la salle</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION CRÉER & SIGNER SA LICENCE
+         ====================================================================== -->
+    <section id="licence" class="licence-section">
+      <div class="container">
+        <div class="licence-wrapper">
+          <div>
+            <span class="eyebrow-pill"><span class="eyebrow-dot"></span> Démarche 100% En Ligne</span>
+            <h2 class="display-title" style="font-size: clamp(2.2rem, 3.6vw, 3.1rem); margin-top: 8px;">
+              CRÉER &amp; <span class="accent-text">SIGNER</span> VOTRE LICENCE
+            </h2>
+            <p style="margin-top: 12px;">
+              Plus besoin d'imprimer de dossier papier : renseignez vos informations, sélectionnez votre catégorie et
+              <strong>signez électroniquement votre charte &amp; licence FFBB</strong> directement ci-contre.
+            </p>
+
+            <div class="licence-steps">
+              <div class="step-card">
+                <div class="step-number">1</div>
+                <div>
+                  <h4>Identité &amp; Catégorie d'âge</h4>
+                  <p>Sélection automatique du tarif et des créneaux selon l'année de naissance (U7 à Senior).</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <div class="step-number">2</div>
+                <div>
+                  <h4>Questionnaire Santé &amp; Assurance FFBB</h4>
+                  <p>Validation immédiate pour un renouvellement ou dépôt du certificat médical.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <div class="step-number">3</div>
+                <div>
+                  <h4>Signature Électronique Certifiée</h4>
+                  <p>Signez au doigt ou à la souris dans l'encadré dédié pour valider votre inscription au club.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form id="licence-form" class="licence-form" novalidate>
+            <div class="form-row-2">
+              <div class="field">
+                <label for="lic-nom">Nom &amp; Prénom du licencié</label>
+                <span id="nom-hint" class="hint">Tel qu'inscrit sur la pièce d'identité</span>
+                <input
+                  type="text"
+                  id="lic-nom"
+                  name="nom"
+                  required
+                  minlength="3"
+                  autocomplete="name"
+                  placeholder="Ex. : Lucas Moreau"
+                  aria-describedby="nom-hint"
+                  data-error="nom-error"
+                >
+                <div id="nom-error" class="error-msg">
+                  <span role="img" aria-label="Erreur">❌</span> Veuillez saisir le nom et prénom complets (3 caractères minimum).
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="lic-email">Adresse e-mail de contact</label>
+                <span id="email-hint" class="hint">Format : prenom.nom@exemple.fr</span>
+                <input
+                  type="email"
+                  id="lic-email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="lucas.moreau@exemple.fr"
+                  aria-describedby="email-hint"
+                  data-error="email-error"
+                >
+                <div id="email-error" class="error-msg">
+                  <span role="img" aria-label="Erreur">❌</span> Saisissez une adresse e-mail au format vous@exemple.fr.
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="field">
+                <label for="lic-categorie">Catégorie souhaitée</label>
+                <span id="cat-hint" class="hint">Saison sportive 2026 / 2027</span>
+                <select id="lic-categorie" name="categorie" required aria-describedby="cat-hint" data-error="cat-error">
+                  <option value="">— Choisir une équipe —</option>
+                  <option value="U7-U9">École Mini-Basket (U7 / U9) — 115 €</option>
+                  <option value="U11-U12">Poussins U11 / U12 — 135 €</option>
+                  <option value="U13-U15">Benjamins U13 / Minimes U15 — 150 €</option>
+                  <option value="U18">Cadets U17 / U18 — 165 €</option>
+                  <option value="Senior-F">Senior Filles (RF2 / DF1) — 185 €</option>
+                  <option value="Senior-M">Senior Garçons (RM2 / DM1) — 185 €</option>
+                  <option value="Loisir">Basket Loisir Mixte — 120 €</option>
+                </select>
+                <div id="cat-error" class="error-msg">
+                  <span role="img" aria-label="Erreur">❌</span> Veuillez sélectionner une catégorie d'inscription.
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="lic-type">Type de demande</label>
+                <span id="type-hint" class="hint">Création ou renouvellement FFBB</span>
+                <select id="lic-type" name="type" required aria-describedby="type-hint">
+                  <option value="creation">Création — 1ère licence au club</option>
+                  <option value="renouvellement">Renouvellement Rochefort BC</option>
+                  <option value="mutation">Mutation depuis un autre club</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="signature-box">
+              <div class="signature-header">
+                <span>Signature électronique du licencié (ou représentant légal)</span>
+                <button type="button" class="btn-clear-sig" id="clear-signature">Effacer la signature</button>
+              </div>
+              <canvas id="signature-pad" width="520" height="120" aria-label="Zone de signature manuscrite de la licence"></canvas>
+            </div>
+
+            <label class="checkbox-row">
+              <input type="checkbox" id="lic-charte" required>
+              <span>
+                J'adhère à la charte sportive du <strong>Rochefort Basket Club</strong> et je valide ma demande de
+                licence FFBB avec signature électronique horodatée.
+              </span>
+            </label>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+              <button type="submit" class="btn-black">Signer &amp; Valider ma licence</button>
+              <span style="font-size: 0.82rem; color: var(--text-body);">Réception immédiate du récépissé par e-mail</span>
+            </div>
+
+            <div id="licence-status" class="licence-status-banner" role="status">
+              ✅ Votre demande de licence signée a bien été enregistrée pour la saison 2026/2027 !
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION REDIRECTION SITE MARCHAND (Boutique Officielle)
+         ====================================================================== -->
+    <section id="boutique">
+      <div class="container">
+        <div class="shop-banner">
+          <div>
+            <span class="eyebrow-pill"><span class="eyebrow-dot"></span> Boutique Officielle Rochefort BC</span>
+            <h2 class="display-title" style="font-size: clamp(2.1rem, 3.5vw, 3rem); margin-top: 8px;">
+              ÉQUIPEZ-VOUS AUX COULEURS DES <span class="accent-text">LIONS</span>
+            </h2>
+            <p style="margin: 12px 0 24px;">
+              Maillots personnalisés, survêtements d'échauffement, hoodies supporters et sacs de sport officiels.
+              Commandez directement sur notre <strong>site marchand partenaire</strong> et récupérez votre pack au gymnase.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+              <a
+                href="https://boutique-rochefort-basket.exemple.fr"
+                target="_blank"
+                rel="noopener"
+                class="btn-black"
+                data-merchant-placeholder="URL_SITE_MARCHAND_A_RENSEIGNER"
+              >
+                Accéder au site marchand officiel ↗
+              </a>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent);">
+                • Lien externe prêt à être connecté à l'URL marchande
+              </span>
+            </div>
+          </div>
+
+          <div class="shop-products-preview">
+            <div class="merch-item">
+              <div class="merch-illustration">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path d="M18 10L26 16H38L46 10L54 20L46 28V54H18V28L10 20L18 10Z" fill="#01009E" stroke="#FF7C32" stroke-width="3"/>
+                  <text x="32" y="41" text-anchor="middle" fill="#FFFFFF" font-family="Bebas Neue, sans-serif" font-size="16">17</text>
+                </svg>
+              </div>
+              <h4>Maillot Officiel</h4>
+              <span class="merch-price">39,00 €</span>
+            </div>
+            <div class="merch-item">
+              <div class="merch-illustration">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <rect x="14" y="14" width="36" height="38" rx="8" fill="#FF7C32" stroke="#01009E" stroke-width="3"/>
+                  <circle cx="32" cy="33" r="9" fill="#FFFFFF"/>
+                </svg>
+              </div>
+              <h4>Hoodie Lions</h4>
+              <span class="merch-price">45,00 €</span>
+            </div>
+            <div class="merch-item">
+              <div class="merch-illustration">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <circle cx="32" cy="32" r="20" fill="#FF7C32" stroke="#01009E" stroke-width="3"/>
+                  <path d="M12 32H52M32 12V52" stroke="#01009E" stroke-width="2.5"/>
+                </svg>
+              </div>
+              <h4>Pack Licencié</h4>
+              <span class="merch-price">65,00 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION ARTICLES / ACTUALITÉS EN BAS DE PAGE (Images en background léger)
+         ====================================================================== -->
+    <section id="actualites">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow-pill"><span class="eyebrow-dot"></span> Vie du Club &amp; Parquet</span>
+            <h2 class="display-title">ACTUALITÉS &amp; <span class="accent-text">ARTICLES</span> DU CLUB</h2>
+            <p class="section-subtitle">
+              Les derniers temps forts du Rochefort Basket Club, stages vacances et résultats du week-end.
+            </p>
+          </div>
+        </div>
+
+        <div class="articles-grid">
+          <article class="article-card">
+            <div class="article-bg-layer article-bg-1" aria-hidden="true"></div>
+            <div class="article-content">
+              <span class="article-date">Stage Vacances • Jeunes U11 à U17</span>
+              <h3>Stage Perfectionnement Toussaint &amp; Hiver au Polygone</h3>
+              <p>
+                Une semaine intensive encadrée par nos éducateurs diplômés : ateliers de tir, concours de meneurs et
+                tournoi 3x3 ouvert à tous les jeunes licenciés.
+              </p>
+            </div>
+            <div class="article-footer">
+              <strong>Places limitées (40 jeunes)</strong>
+              <a href="#licence" class="btn-black" style="padding: 9px 18px; font-size: 0.84rem;">Lire l'article</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-bg-layer article-bg-2" aria-hidden="true"></div>
+            <div class="article-content">
+              <span class="article-date">Championnat Régional • Seniors</span>
+              <h3>Victoire électrique des Seniors RM2 dans le derby maritime (78–71)</h3>
+              <p>
+                Dans une salle du Polygone chauffée à blanc par plus de 250 supporters, les Lions s'imposent dans le
+                quatrième quart-temps et conservent la tête de leur poule.
+              </p>
+            </div>
+            <div class="article-footer">
+              <strong>Résumé &amp; Photos</strong>
+              <a href="#planning" class="btn-black" style="padding: 9px 18px; font-size: 0.84rem;">Lire l'article</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div class="article-bg-layer article-bg-3" aria-hidden="true"></div>
+            <div class="article-content">
+              <span class="article-date">Partenaires &amp; Entreprises</span>
+              <h3>Rejoignez le Club des Partenaires du Rochefort Basket Club</h3>
+              <p>
+                Associez l'image de votre entreprise aux valeurs du sport collectif à Rochefort : panneautique salle,
+                maillots officiels et soirées VIP.
+              </p>
+            </div>
+            <div class="article-footer">
+              <strong>Dossier Mécénat 2026</strong>
+              <a href="#infos" class="btn-black" style="padding: 9px 18px; font-size: 0.84rem;">Nous contacter</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION INFOS PRATIQUES (Adresse, Contact, Accès)
+         ====================================================================== -->
+    <section id="infos">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow-pill"><span class="eyebrow-dot"></span> Venir au Gymnase &amp; Nous Joindre</span>
+            <h2 class="display-title">INFOS <span class="accent-text">PRATIQUES</span> &amp; CONTACT</h2>
+          </div>
+        </div>
+
+        <div class="infos-grid">
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <h3>Nos Salles &amp; Adresses</h3>
+            <p><strong>Gymnase Municipal du Polygone</strong><br>Rue Charles Maher, 17300 Rochefort</p>
+            <ul>
+              <li><strong>Salle Annexe :</strong> Gymnase Champlain, Av. Marcel Dassault, 17300 Rochefort</li>
+              <li><strong>Parking :</strong> Gratuit devant l'entrée principale (120 places)</li>
+              <li><strong>Accès Bus :</strong> Réseau R'Bus — Arrêt Polygone</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">📞</div>
+            <h3>Secrétariat &amp; Contact</h3>
+            <p>Notre équipe dirigeante et nos éducateurs vous accueillent au bureau du club :</p>
+            <ul>
+              <li><strong>Téléphone :</strong> 05 46 99 17 17 / 06 78 45 17 00</li>
+              <li><strong>E-mail :</strong> contact@rochefort-basket-club.fr</li>
+              <li><strong>Permanences :</strong> Mercredi 14h–18h30 &amp; Vendredi 18h–20h</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">🏀</div>
+            <h3>Documents &amp; Liens Utiles</h3>
+            <p>Tout pour préparer votre saison sportive en toute sérénité :</p>
+            <ul style="margin-bottom: 18px;">
+              <li><strong>Pass'Sport &amp; Chèques Vacances :</strong> Acceptés au club</li>
+              <li><strong>Essai gratuit :</strong> 2 séances découvertes offertes en septembre</li>
+            </ul>
+            <a href="#licence" class="btn-black" style="width: 100%;">Créer ma licence maintenant</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER (#01009E background, #FFFFFF text)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom: 14px;">
+            <img src="logo-rochefort-basket.jpg" alt="Logo Rochefort Basket Club" class="brand-logo">
+            <div class="brand-text">
+              <span class="brand-name">ROCHEFORT BASKET CLUB</span>
+              <span class="brand-sub">Club Affilié FFBB • Charente-Maritime (17)</span>
+            </div>
+          </div>
+          <p>
+            Club formateur et convivial au cœur de Rochefort. Ensemble, faisons rugir les Lions sur tous les terrains
+            de Nouvelle-Aquitaine.
+          </p>
+        </div>
+
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#equipes">Nos Équipes (U7 à Senior)</a></li>
+            <li><a href="#planning">Planning &amp; Calendrier</a></li>
+            <li><a href="#licence">Créer &amp; Signer ma Licence</a></li>
+            <li><a href="#actualites">Actualités du Club</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Boutique &amp; Licences</h4>
+          <ul>
+            <li><a href="#boutique" data-merchant-link="true">Site Marchand Officiel ↗</a></li>
+            <li><a href="#licence">Renouvellement FFBB</a></li>
+            <li><a href="#infos">Tarifs &amp; Aides Pass'Sport</a></li>
+            <li><a href="#infos">Devenir Partenaire</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Gymnase du Polygone</h4>
+          <p>
+            Rue Charles Maher<br>
+            17300 Rochefort<br>
+            contact@rochefort-basket-club.fr
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Rochefort Basket Club — Tous droits réservés.</span>
+        <span>Couleurs officielles : #F8F6F1 • #01009E • #01009E • #FF7C32</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Filtrage des équipes par catégorie
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const teamCards = document.querySelectorAll('.team-card');
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        teamCards.forEach((card) => {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'flex' : 'none';
+        });
+      });
+    });
+
+    // 2. Signature électronique sur Canvas
+    const canvas = document.getElementById('signature-pad');
+    const ctx = canvas.getContext('2d');
+    let drawing = false;
+    ctx.strokeStyle = '#01009E';
+    ctx.lineWidth = 2.4;
+    ctx.lineCap = 'round';
+
+    // Dessiner une signature d'exemple légère au chargement pour illustrer la maquette
+    ctx.beginPath();
+    ctx.moveTo(60, 78);
+    ctx.bezierCurveTo(110, 32, 165, 95, 230, 52);
+    ctx.bezierCurveTo(275, 28, 320, 82, 410, 58);
+    ctx.stroke();
+
+    const getPos = (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      return {
+        x: (clientX - rect.left) * (canvas.width / rect.width),
+        y: (clientY - rect.top) * (canvas.height / rect.height)
+      };
+    };
+
+    canvas.addEventListener('pointerdown', (e) => {
+      drawing = true;
+      const pos = getPos(e);
+      ctx.beginPath();
+      ctx.moveTo(pos.x, pos.y);
+    });
+    canvas.addEventListener('pointermove', (e) => {
+      if (!drawing) return;
+      const pos = getPos(e);
+      ctx.lineTo(pos.x, pos.y);
+      ctx.stroke();
+    });
+    window.addEventListener('pointerup', () => { drawing = false; });
+
+    document.getElementById('clear-signature').addEventListener('click', () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+
+    // 3. Synchronisation ARIA avec :user-invalid (Modern Web Guidance)
+    const linkError = (el, shown) => {
+      const errorId = el.dataset.error;
+      if (!errorId) return;
+      const ids = (el.getAttribute('aria-describedby') || '').split(/\s+/).filter((id) => id && id !== errorId);
+      if (shown) ids.push(errorId);
+      if (ids.length) el.setAttribute('aria-describedby', ids.join(' '));
+      else el.removeAttribute('aria-describedby');
+    };
+
+    const announcer = document.createElement('div');
+    announcer.setAttribute('aria-live', 'polite');
+    announcer.classList.add('visually-hidden');
+    document.body.append(announcer);
+    let announceTimer;
+    let announcedField;
+
+    const spokenText = (node) => {
+      const copy = node.cloneNode(true);
+      copy.querySelectorAll('[aria-hidden="true"]').forEach((n) => n.remove());
+      copy.querySelectorAll('[role="img"][aria-label]').forEach((n) => n.replaceWith(`${n.getAttribute('aria-label')}: `));
+      return copy.textContent.replace(/\s+/g, ' ').trim();
+    };
+
+    const announceError = (el) => {
+      const error = document.getElementById(el.dataset.error);
+      if (!error) return;
+      const label = el.labels?.[0] ? `${spokenText(el.labels[0])}: ` : '';
+      clearTimeout(announceTimer);
+      announcer.textContent = '';
+      announcedField = el;
+      announceTimer = setTimeout(() => { announcer.textContent = label + spokenText(error); }, 500);
+    };
+
+    const flagged = new WeakSet();
+    const announced = new WeakSet();
+    const syncAria = (el, announce = false) => {
+      if (!el.matches?.('input, select, textarea')) return;
+      const invalid = el.matches(':user-invalid');
+      if (invalid) {
+        if (announce && !announced.has(el)) {
+          announceError(el);
+          announced.add(el);
+        }
+        el.setAttribute('aria-invalid', 'true');
+        linkError(el, true);
+        flagged.add(el);
+      } else if (flagged.has(el) || el.getAttribute('aria-invalid') !== 'true') {
+        el.setAttribute('aria-invalid', 'false');
+        linkError(el, false);
+        flagged.delete(el);
+        announced.delete(el);
+        if (announcedField === el) {
+          clearTimeout(announceTimer);
+          announcer.textContent = '';
+        }
+      }
+    };
+
+    document.querySelectorAll('input, select, textarea').forEach((el) => syncAria(el));
+    document.addEventListener('blur', (e) => syncAria(e.target, true), true);
+    document.addEventListener('input', (e) => {
+      if (e.target.hasAttribute('aria-invalid')) syncAria(e.target);
+    });
+    document.addEventListener('change', (e) => syncAria(e.target, true), true);
+    document.addEventListener('invalid', (e) => {
+      announced.add(e.target);
+      syncAria(e.target);
+    }, true);
+
+    document.getElementById('licence-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (e.target.checkValidity()) {
+        document.getElementById('licence-status').style.display = 'block';
+      } else {
+        const firstInvalid = e.target.querySelector(':invalid');
+        if (firstInvalid) firstInvalid.focus();
+      }
+    });
+  </script>
+</body>
+</html>

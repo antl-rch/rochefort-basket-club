@@ -1,0 +1,535 @@
+<svg width="1440" height="3520" viewBox="0 0 1440 3520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient très léger plus clair vers le centre, quasi imperceptible -->
+    <radialGradient id="bgRadial" cx="50%" cy="35%" r="65%" fx="50%" fy="35%">
+      <stop offset="0%" stop-color="#FDFCFA"/>
+      <stop offset="55%" stop-color="#FAF8F4"/>
+      <stop offset="100%" stop-color="#F8F6F1"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ==================== BACKGROUND ==================== -->
+  <rect id="Page-Background" width="1440" height="3520" fill="url(#bgRadial)"/>
+
+  <!-- ==================== 1. HEADER (#01009E / #FFFFFF / #FF7C32) ==================== -->
+  <g id="01-Header">
+    <rect width="1440" height="88" fill="#01009E"/>
+    <line x1="0" y1="88" x2="1440" y2="88" stroke="#FF7C32" stroke-width="2"/>
+
+    <!-- Club Logo Badge Vector in Header -->
+    <g id="Logo-Rochefort-BC" transform="translate(80, 16)">
+      <circle cx="28" cy="28" r="27" fill="#0B2E59" stroke="#FF7C32" stroke-width="2"/>
+      <circle cx="28" cy="28" r="23" fill="none" stroke="#FFFFFF" stroke-width="1.2"/>
+      <circle cx="28" cy="24" r="14" fill="#FF7C32"/>
+      <path d="M18 28C20 18 32 16 38 24C36 32 28 38 20 35Z" fill="#FFD100"/>
+      <text x="28" y="50" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="6" font-weight="800">ROCHEFORT BC</text>
+    </g>
+
+    <text x="150" y="44" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="20" font-weight="800" letter-spacing="0.5">ROCHEFORT BASKET CLUB</text>
+    <text x="150" y="62" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">LES LIONS DE CHARENTE-MARITIME • FFBB</text>
+
+    <!-- Nav Links (#FFFFFF) -->
+    <g id="Header-Nav-Links" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">
+      <text x="470" y="50">Équipes</text>
+      <text x="550" y="50">Planning</text>
+      <text x="635" y="50">Licence &amp; Signature</text>
+      <text x="795" y="50">Boutique ↗</text>
+      <text x="900" y="50">Actualités</text>
+      <text x="995" y="50">Infos Pratiques</text>
+    </g>
+
+    <!-- Bouton de nav en background #FF7C32 avec texte en #FFFFFF -->
+    <g id="Header-CTA-Button" transform="translate(1195, 22)">
+      <rect width="165" height="44" rx="22" fill="#FF7C32"/>
+      <text x="82.5" y="27" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="14" font-weight="700">Créer ma licence →</text>
+    </g>
+  </g>
+
+  <!-- ==================== 2. HERO SECTION ==================== -->
+  <g id="02-Hero-Section" transform="translate(0, 88)">
+    <!-- Subtle Court Lines Watermark -->
+    <circle cx="1180" cy="270" r="220" stroke="#FF7C32" stroke-opacity="0.08" stroke-width="2"/>
+    <circle cx="1180" cy="270" r="90" stroke="#01009E" stroke-opacity="0.05" stroke-width="2" stroke-dasharray="6 6"/>
+
+    <!-- Eyebrow Pill -->
+    <g id="Hero-Eyebrow" transform="translate(80, 64)">
+      <rect width="348" height="32" rx="16" fill="#FF7C32" fill-opacity="0.1" stroke="#FF7C32" stroke-width="1.5"/>
+      <circle cx="18" cy="16" r="4" fill="#FF7C32"/>
+      <text x="32" y="21" fill="#01009E" font-family="Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.8">SAISON 2026 / 2027 • INSCRIPTIONS OUVERTES</text>
+    </g>
+
+    <!-- Hero Title (#01009E & accent #FF7C32) -->
+    <text x="80" y="156" fill="#01009E" font-family="Inter, sans-serif" font-size="52" font-weight="900">LA RAGE DU <tspan fill="#FF7C32">LION</tspan>,</text>
+    <text x="80" y="218" fill="#01009E" font-family="Inter, sans-serif" font-size="52" font-weight="900">L'ESPRIT COLLECTIF</text>
+    <text x="80" y="280" fill="#01009E" font-family="Inter, sans-serif" font-size="52" font-weight="900">À <tspan fill="#FF7C32">ROCHEFORT</tspan></text>
+
+    <!-- Hero Lead (#01009E) -->
+    <text x="80" y="326" fill="#01009E" font-family="Inter, sans-serif" font-size="17" font-weight="500">Du Mini-Basket U7 aux équipes Seniors Régionales, rejoignez le Rochefort Basket Club.</text>
+    <text x="80" y="352" fill="#01009E" font-family="Inter, sans-serif" font-size="17" font-weight="500">Créez et signez votre licence en ligne, consultez le planning et équipez-vous au club.</text>
+
+    <!-- Hero Buttons (#01009E with #FFFFFF text + #FF7C32 Shop CTA) -->
+    <g id="Hero-Btn-Primary" transform="translate(80, 384)">
+      <rect width="240" height="52" rx="26" fill="#01009E"/>
+      <text x="120" y="31" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="15" font-weight="700">Créer &amp; signer ma licence</text>
+    </g>
+    <g id="Hero-Btn-Shop" transform="translate(336, 384)">
+      <rect width="210" height="52" rx="26" fill="#FF7C32"/>
+      <text x="105" y="31" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="15" font-weight="700">Boutique Officielle ↗</text>
+    </g>
+
+    <!-- Hero Stats -->
+    <line x1="80" y1="468" x2="720" y2="468" stroke="#01009E" stroke-opacity="0.1"/>
+    <g id="Hero-Stats" transform="translate(80, 490)">
+      <text x="0" y="28" fill="#01009E" font-family="Inter, sans-serif" font-size="32" font-weight="900">340<tspan fill="#FF7C32">+</tspan></text>
+      <text x="0" y="50" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="600">Licenciés FFBB actifs</text>
+
+      <text x="220" y="28" fill="#01009E" font-family="Inter, sans-serif" font-size="32" font-weight="900">14 <tspan fill="#FF7C32">Équipes</tspan></text>
+      <text x="220" y="50" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="600">De Baby U7 à Senior Régional</text>
+
+      <text x="460" y="28" fill="#01009E" font-family="Inter, sans-serif" font-size="32" font-weight="900">100<tspan fill="#FF7C32">%</tspan></text>
+      <text x="460" y="50" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="600">Licence &amp; signature digitale</text>
+    </g>
+
+    <!-- Right Showcase Card: Prochain Match (Bordure #FF7C32) -->
+    <g id="Hero-Match-Card" transform="translate(820, 64)">
+      <rect width="540" height="476" rx="24" fill="#FFFFFF" stroke="#FF7C32" stroke-width="2"/>
+      <rect x="28" y="28" width="210" height="28" rx="14" fill="#FF7C32"/>
+      <text x="133" y="46" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="11" font-weight="800" letter-spacing="0.8">PROCHAIN MATCH À DOMICILE</text>
+      <text x="512" y="47" text-anchor="end" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="700">Sam. 21 Nov. • 20h30</text>
+
+      <!-- Match Versus Box -->
+      <rect x="28" y="76" width="484" height="260" rx="16" fill="#F8F6F1" stroke="#FF7C32" stroke-opacity="0.35"/>
+
+      <!-- Left Team: Rochefort BC -->
+      <circle cx="145" cy="180" r="46" fill="#0B2E59" stroke="#FF7C32" stroke-width="2.5"/>
+      <circle cx="145" cy="174" r="24" fill="#FF7C32"/>
+      <path d="M130 182C134 166 152 164 162 176C158 190 145 198 133 192Z" fill="#FFD100"/>
+      <text x="145" y="254" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="16" font-weight="800">ROCHEFORT BC</text>
+      <text x="145" y="274" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="600">Senior Masc. RM2</text>
+
+      <!-- VS Pill -->
+      <circle cx="270" cy="190" r="26" fill="#FF7C32" fill-opacity="0.12" stroke="#FF7C32" stroke-width="1.5"/>
+      <text x="270" y="197" text-anchor="middle" fill="#FF7C32" font-family="Inter, sans-serif" font-size="18" font-weight="900">VS</text>
+
+      <!-- Right Team: La Rochelle B2 -->
+      <circle cx="395" cy="180" r="46" fill="#01009E"/>
+      <text x="395" y="190" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="24" font-weight="800">LR</text>
+      <text x="395" y="254" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="16" font-weight="800">LA ROCHELLE B2</text>
+      <text x="395" y="274" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="600">Derby Maritime</text>
+
+      <!-- Card Footer -->
+      <text x="28" y="382" fill="#01009E" font-family="Inter, sans-serif" font-size="15" font-weight="800">Gymnase du Polygone — Rochefort</text>
+      <text x="28" y="404" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">Entrée gratuite • Buvette sur place</text>
+
+      <g transform="translate(342, 366)">
+        <rect width="170" height="44" rx="22" fill="#01009E"/>
+        <text x="85" y="27" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="700">Voir le calendrier</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== 3. SECTION ÉQUIPES (Senior, Jeunes, U12, Senior Filles...) ==================== -->
+  <g id="03-Section-Equipes" transform="translate(80, 700)">
+    <rect width="190" height="28" rx="14" fill="#FF7C32" fill-opacity="0.1" stroke="#FF7C32" stroke-width="1.2"/>
+    <text x="95" y="18" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="11" font-weight="800">NOS COLLECTIFS FFBB</text>
+
+    <text x="0" y="68" fill="#01009E" font-family="Inter, sans-serif" font-size="36" font-weight="900">LES <tspan fill="#FF7C32">ÉQUIPES</tspan> DU CLUB (U7 À SENIOR)</text>
+    <text x="0" y="96" fill="#01009E" font-family="Inter, sans-serif" font-size="15" font-weight="500">Formation jeune, compétition régionale et pratique loisir : toutes les catégories du Rochefort Basket Club.</text>
+
+    <!-- Category Filter Buttons -->
+    <g id="Equipes-Filters" transform="translate(760, 42)">
+      <rect x="0" y="0" width="110" height="38" rx="19" fill="#FF7C32"/>
+      <text x="55" y="24" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="700">Toutes (14)</text>
+
+      <rect x="120" y="0" width="100" height="38" rx="19" fill="#01009E"/>
+      <text x="170" y="24" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="700">Seniors</text>
+
+      <rect x="230" y="0" width="140" height="38" rx="19" fill="#01009E"/>
+      <text x="300" y="24" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="700">Jeunes U11–U18</text>
+
+      <rect x="380" y="0" width="140" height="38" rx="19" fill="#01009E"/>
+      <text x="450" y="24" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="700">Mini &amp; Loisir</text>
+    </g>
+
+    <!-- Row 1 of Team Cards -->
+    <!-- Card 1: Senior Masculins -->
+    <g id="Team-Card-Senior-M" transform="translate(0, 128)">
+      <rect width="410" height="270" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <rect x="24" y="24" width="136" height="26" rx="13" fill="#FF7C32" fill-opacity="0.12" stroke="#FF7C32"/>
+      <text x="92" y="41" text-anchor="middle" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">SENIOR MASCULINS</text>
+      <text x="386" y="41" text-anchor="end" fill="#01009E" font-family="Inter, sans-serif" font-size="12" font-weight="700">Régionale RM2</text>
+
+      <text x="24" y="82" fill="#01009E" font-family="Inter, sans-serif" font-size="22" font-weight="800">Seniors Garçons 1 &amp; 2</text>
+      <text x="24" y="108" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">Équipe fanion masculine en Régionale Nouvelle-Aquitaine</text>
+      <text x="24" y="128" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">et équipe réserve en championnat départemental.</text>
+
+      <line x1="24" y1="146" x2="386" y2="146" stroke="#01009E" stroke-opacity="0.1"/>
+      <text x="24" y="170" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Coach : <tspan fill="#01009E" font-weight="700">Marc Delaunay (DEFB)</tspan></text>
+      <text x="24" y="192" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Créneaux : <tspan fill="#01009E" font-weight="700">Mardi &amp; Vendredi • 20h00 – 22h00</tspan></text>
+
+      <rect x="24" y="212" width="362" height="40" rx="20" fill="#01009E"/>
+      <text x="205" y="237" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="700">Rejoindre ce collectif</text>
+    </g>
+
+    <!-- Card 2: Senior Filles -->
+    <g id="Team-Card-Senior-F" transform="translate(435, 128)">
+      <rect width="410" height="270" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <rect x="24" y="24" width="120" height="26" rx="13" fill="#FF7C32" fill-opacity="0.12" stroke="#FF7C32"/>
+      <text x="84" y="41" text-anchor="middle" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">SENIOR FILLES</text>
+      <text x="386" y="41" text-anchor="end" fill="#01009E" font-family="Inter, sans-serif" font-size="12" font-weight="700">Régionale RF2</text>
+
+      <text x="24" y="82" fill="#01009E" font-family="Inter, sans-serif" font-size="22" font-weight="800">Seniors Filles 1 &amp; 2</text>
+      <text x="24" y="108" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">Collectif féminin engagé en championnat Régional RF2</text>
+      <text x="24" y="128" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">et Pré-Régional Charente-Maritime.</text>
+
+      <line x1="24" y1="146" x2="386" y2="146" stroke="#01009E" stroke-opacity="0.1"/>
+      <text x="24" y="170" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Coach : <tspan fill="#01009E" font-weight="700">Sophie Vallet (CQP)</tspan></text>
+      <text x="24" y="192" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Créneaux : <tspan fill="#01009E" font-weight="700">Mercredi &amp; Vendredi • 19h30 – 21h15</tspan></text>
+
+      <rect x="24" y="212" width="362" height="40" rx="20" fill="#01009E"/>
+      <text x="205" y="237" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="700">Rejoindre ce collectif</text>
+    </g>
+
+    <!-- Card 3: Jeunes U17 / U18 -->
+    <g id="Team-Card-U18" transform="translate(870, 128)">
+      <rect width="410" height="270" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <rect x="24" y="24" width="130" height="26" rx="13" fill="#FF7C32" fill-opacity="0.12" stroke="#FF7C32"/>
+      <text x="89" y="41" text-anchor="middle" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">JEUNES U17 / U18</text>
+      <text x="386" y="41" text-anchor="end" fill="#01009E" font-family="Inter, sans-serif" font-size="12" font-weight="700">Inter-Département</text>
+
+      <text x="24" y="82" fill="#01009E" font-family="Inter, sans-serif" font-size="22" font-weight="800">Cadets U18 Garçons &amp; Filles</text>
+      <text x="24" y="108" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">Passerelle vers le groupe Senior avec préparation</text>
+      <text x="24" y="128" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">physique, lecture tactique et compétition.</text>
+
+      <line x1="24" y1="146" x2="386" y2="146" stroke="#01009E" stroke-opacity="0.1"/>
+      <text x="24" y="170" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Coach : <tspan fill="#01009E" font-weight="700">Lucas Bernard</tspan></text>
+      <text x="24" y="192" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Créneaux : <tspan fill="#01009E" font-weight="700">Mer. 17h30 &amp; Ven. 18h00</tspan></text>
+
+      <rect x="24" y="212" width="362" height="40" rx="20" fill="#01009E"/>
+      <text x="205" y="237" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="700">Inscrire en U18</text>
+    </g>
+
+    <!-- Row 2 of Team Cards -->
+    <!-- Card 4: U13 / U15 -->
+    <g id="Team-Card-U15" transform="translate(0, 422)">
+      <rect width="410" height="270" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <rect x="24" y="24" width="130" height="26" rx="13" fill="#FF7C32" fill-opacity="0.12" stroke="#FF7C32"/>
+      <text x="89" y="41" text-anchor="middle" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">JEUNES U13 / U15</text>
+      <text x="386" y="41" text-anchor="end" fill="#01009E" font-family="Inter, sans-serif" font-size="12" font-weight="700">Départemental D1</text>
+
+      <text x="24" y="82" fill="#01009E" font-family="Inter, sans-serif" font-size="22" font-weight="800">Minimes U15 &amp; Benjamins U13</text>
+      <text x="24" y="108" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">Perfectionnement technique individuel, fondamentaux</text>
+      <text x="24" y="128" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">collectifs et matchs officiels chaque samedi.</text>
+
+      <line x1="24" y1="146" x2="386" y2="146" stroke="#01009E" stroke-opacity="0.1"/>
+      <text x="24" y="170" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Coach : <tspan fill="#01009E" font-weight="700">Thomas Giraud</tspan></text>
+      <text x="24" y="192" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Créneaux : <tspan fill="#01009E" font-weight="700">Mardi &amp; Jeudi • 18h00 – 19h30</tspan></text>
+
+      <rect x="24" y="212" width="362" height="40" rx="20" fill="#01009E"/>
+      <text x="205" y="237" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="700">Inscrire en U13 / U15</text>
+    </g>
+
+    <!-- Card 5: Poussins U11 / U12 -->
+    <g id="Team-Card-U12" transform="translate(435, 422)">
+      <rect width="410" height="270" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <rect x="24" y="24" width="140" height="26" rx="13" fill="#FF7C32" fill-opacity="0.12" stroke="#FF7C32"/>
+      <text x="94" y="41" text-anchor="middle" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">POUSSINS U11 / U12</text>
+      <text x="386" y="41" text-anchor="end" fill="#01009E" font-family="Inter, sans-serif" font-size="12" font-weight="700">Plateaux CD17</text>
+
+      <text x="24" y="82" fill="#01009E" font-family="Inter, sans-serif" font-size="22" font-weight="800">Équipes U11 &amp; U12 (F &amp; M)</text>
+      <text x="24" y="108" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">Apprentissage du dribble, du tir en course et de</text>
+      <text x="24" y="128" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">l'esprit d'équipe dans un cadre formateur.</text>
+
+      <line x1="24" y1="146" x2="386" y2="146" stroke="#01009E" stroke-opacity="0.1"/>
+      <text x="24" y="170" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Coach : <tspan fill="#01009E" font-weight="700">Camille Moreau</tspan></text>
+      <text x="24" y="192" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Créneaux : <tspan fill="#01009E" font-weight="700">Mercredi 15h30 &amp; Vendredi 17h15</tspan></text>
+
+      <rect x="24" y="212" width="362" height="40" rx="20" fill="#01009E"/>
+      <text x="205" y="237" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="700">Inscrire en U11 / U12</text>
+    </g>
+
+    <!-- Card 6: École Mini-Basket U7 / U9 & Loisir -->
+    <g id="Team-Card-Mini-Loisir" transform="translate(870, 422)">
+      <rect width="410" height="270" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <rect x="24" y="24" width="150" height="26" rx="13" fill="#FF7C32" fill-opacity="0.12" stroke="#FF7C32"/>
+      <text x="99" y="41" text-anchor="middle" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">MINI-BASKET &amp; LOISIR</text>
+      <text x="386" y="41" text-anchor="end" fill="#01009E" font-family="Inter, sans-serif" font-size="12" font-weight="700">Label FFBB</text>
+
+      <text x="24" y="82" fill="#01009E" font-family="Inter, sans-serif" font-size="22" font-weight="800">Baby U7, Mini U9 &amp; Loisir</text>
+      <text x="24" y="108" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">Éveil moteur dès 5 ans le mercredi après-midi et</text>
+      <text x="24" y="128" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="500">créneau Basket Loisir mixte adultes le jeudi soir.</text>
+
+      <line x1="24" y1="146" x2="386" y2="146" stroke="#01009E" stroke-opacity="0.1"/>
+      <text x="24" y="170" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Staff : <tspan fill="#01009E" font-weight="700">Éducateurs Diplômés FFBB</tspan></text>
+      <text x="24" y="192" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Créneaux : <tspan fill="#01009E" font-weight="700">Mer. 14h00 (Mini) • Jeu. 20h30 (Loisir)</tspan></text>
+
+      <rect x="24" y="212" width="362" height="40" rx="20" fill="#01009E"/>
+      <text x="205" y="237" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="700">Inscrire en Mini / Loisir</text>
+    </g>
+  </g>
+
+  <!-- ==================== 4. SECTION PLANNING ==================== -->
+  <g id="04-Section-Planning" transform="translate(80, 1460)">
+    <rect width="210" height="28" rx="14" fill="#FF7C32" fill-opacity="0.1" stroke="#FF7C32" stroke-width="1.2"/>
+    <text x="105" y="18" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="11" font-weight="800">ORGANISATION HEBDOMADAIRE</text>
+
+    <text x="0" y="68" fill="#01009E" font-family="Inter, sans-serif" font-size="36" font-weight="900">PLANNING DES <tspan fill="#FF7C32">ENTRAÎNEMENTS</tspan> &amp; MATCHS</text>
+
+    <!-- Left Table Box -->
+    <g id="Planning-Table-Card" transform="translate(0, 96)">
+      <rect width="840" height="360" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <rect width="840" height="52" rx="16" fill="#01009E"/>
+      <text x="24" y="32" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="800">CATÉGORIE / ÉQUIPE</text>
+      <text x="340" y="32" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="800">JOURS</text>
+      <text x="520" y="32" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="800">HORAIRES</text>
+      <text x="700" y="32" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="800">SALLE</text>
+
+      <!-- Rows -->
+      <g font-family="Inter, sans-serif" font-size="14">
+        <text x="24" y="92" fill="#01009E" font-weight="700">Baby &amp; Mini-Basket (U7 / U9)</text>
+        <text x="340" y="92" fill="#01009E">Mercredi</text>
+        <text x="520" y="92" fill="#01009E">14h00 – 15h30</text>
+        <text x="700" y="92" fill="#FF7C32" font-weight="700">Polygone</text>
+        <line x1="24" y1="108" x2="816" y2="108" stroke="#01009E" stroke-opacity="0.08"/>
+
+        <text x="24" y="140" fill="#01009E" font-weight="700">Poussins U11 / U12 (Filles &amp; Garçons)</text>
+        <text x="340" y="140" fill="#01009E">Mercredi &amp; Vendredi</text>
+        <text x="520" y="140" fill="#01009E">15h30 – 17h00</text>
+        <text x="700" y="140" fill="#FF7C32" font-weight="700">Polygone</text>
+        <line x1="24" y1="156" x2="816" y2="156" stroke="#01009E" stroke-opacity="0.08"/>
+
+        <text x="24" y="188" fill="#01009E" font-weight="700">Benjamins U13 &amp; Minimes U15</text>
+        <text x="340" y="188" fill="#01009E">Mardi &amp; Jeudi</text>
+        <text x="520" y="188" fill="#01009E">18h00 – 19h30</text>
+        <text x="700" y="188" fill="#FF7C32" font-weight="700">Polygone</text>
+        <line x1="24" y1="204" x2="816" y2="204" stroke="#01009E" stroke-opacity="0.08"/>
+
+        <text x="24" y="236" fill="#01009E" font-weight="700">Cadets U17 / U18 (M &amp; F)</text>
+        <text x="340" y="236" fill="#01009E">Mercredi &amp; Vendredi</text>
+        <text x="520" y="236" fill="#01009E">17h30 – 19h15</text>
+        <text x="700" y="236" fill="#FF7C32" font-weight="700">Champlain</text>
+        <line x1="24" y1="252" x2="816" y2="252" stroke="#01009E" stroke-opacity="0.08"/>
+
+        <text x="24" y="284" fill="#01009E" font-weight="700">Seniors Filles RF2 &amp; DF1</text>
+        <text x="340" y="284" fill="#01009E">Mercredi &amp; Vendredi</text>
+        <text x="520" y="284" fill="#01009E">19h30 – 21h15</text>
+        <text x="700" y="284" fill="#FF7C32" font-weight="700">Polygone</text>
+        <line x1="24" y1="300" x2="816" y2="300" stroke="#01009E" stroke-opacity="0.08"/>
+
+        <text x="24" y="332" fill="#01009E" font-weight="700">Seniors Garçons RM2 &amp; Basket Loisir</text>
+        <text x="340" y="332" fill="#01009E">Mardi, Jeudi &amp; Vendredi</text>
+        <text x="520" y="332" fill="#01009E">20h00 – 22h00</text>
+        <text x="700" y="332" fill="#FF7C32" font-weight="700">Polygone</text>
+      </g>
+    </g>
+
+    <!-- Right Agenda Matchs Card -->
+    <g id="Planning-Weekend-Card" transform="translate(868, 96)">
+      <rect width="412" height="360" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <text x="24" y="40" fill="#FF7C32" font-family="Inter, sans-serif" font-size="12" font-weight="800">AGENDA DU WEEK-END AU GYMNASE</text>
+      <text x="24" y="68" fill="#01009E" font-family="Inter, sans-serif" font-size="22" font-weight="800">Matchs à Domicile</text>
+
+      <rect x="24" y="88" width="364" height="62" rx="10" fill="#F8F6F1"/>
+      <rect x="24" y="88" width="5" height="62" rx="2.5" fill="#FF7C32"/>
+      <text x="42" y="112" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">SAMEDI 14H30 • PLATEAU CD17</text>
+      <text x="42" y="134" fill="#01009E" font-family="Inter, sans-serif" font-size="15" font-weight="800">U12 Mixte vs Saintes Basket</text>
+
+      <rect x="24" y="162" width="364" height="62" rx="10" fill="#F8F6F1"/>
+      <rect x="24" y="162" width="5" height="62" rx="2.5" fill="#FF7C32"/>
+      <text x="42" y="186" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">SAMEDI 17H30 • RÉGIONALE RF2</text>
+      <text x="42" y="208" fill="#01009E" font-family="Inter, sans-serif" font-size="15" font-weight="800">Senior Filles vs Niort Basket</text>
+
+      <rect x="24" y="236" width="364" height="62" rx="10" fill="#F8F6F1"/>
+      <rect x="24" y="236" width="5" height="62" rx="2.5" fill="#FF7C32"/>
+      <text x="42" y="260" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">SAMEDI 20H30 • RÉGIONALE RM2</text>
+      <text x="42" y="282" fill="#01009E" font-family="Inter, sans-serif" font-size="15" font-weight="800">Senior Garçons vs La Rochelle 2</text>
+
+      <rect x="24" y="310" width="364" height="36" rx="18" fill="#01009E"/>
+      <text x="206" y="333" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="700">Itinéraire vers le Gymnase</text>
+    </g>
+  </g>
+
+  <!-- ==================== 5. SECTION CRÉER & SIGNER SA LICENCE ==================== -->
+  <g id="05-Section-Licence-Et-Signature" transform="translate(80, 1980)">
+    <rect width="1280" height="430" rx="24" fill="#FFFFFF" stroke="#FF7C32" stroke-width="2"/>
+
+    <!-- Left Explanatory Column -->
+    <g transform="translate(40, 40)">
+      <rect width="200" height="28" rx="14" fill="#FF7C32" fill-opacity="0.1" stroke="#FF7C32"/>
+      <text x="100" y="18" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="11" font-weight="800">DÉMARCHE 100% DIGITALE</text>
+
+      <text x="0" y="68" fill="#01009E" font-family="Inter, sans-serif" font-size="34" font-weight="900">CRÉER &amp; <tspan fill="#FF7C32">SIGNER</tspan></text>
+      <text x="0" y="106" fill="#01009E" font-family="Inter, sans-serif" font-size="34" font-weight="900">VOTRE LICENCE FFBB</text>
+
+      <text x="0" y="142" fill="#01009E" font-family="Inter, sans-serif" font-size="14" font-weight="500">Inscrivez-vous en 3 minutes et signez électroniquement</text>
+      <text x="0" y="164" fill="#01009E" font-family="Inter, sans-serif" font-size="14" font-weight="500">votre charte et votre licence directement en ligne.</text>
+
+      <!-- 3 Steps -->
+      <g transform="translate(0, 190)">
+        <rect width="480" height="48" rx="10" fill="#F8F6F1" stroke="#FF7C32" stroke-opacity="0.3"/>
+        <circle cx="26" cy="24" r="14" fill="#FF7C32"/>
+        <text x="26" y="29" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="800">1</text>
+        <text x="52" y="29" fill="#01009E" font-family="Inter, sans-serif" font-size="14" font-weight="700">Identité &amp; Choix de la catégorie (U7 à Senior)</text>
+      </g>
+      <g transform="translate(0, 248)">
+        <rect width="480" height="48" rx="10" fill="#F8F6F1" stroke="#FF7C32" stroke-opacity="0.3"/>
+        <circle cx="26" cy="24" r="14" fill="#FF7C32"/>
+        <text x="26" y="29" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="800">2</text>
+        <text x="52" y="29" fill="#01009E" font-family="Inter, sans-serif" font-size="14" font-weight="700">Questionnaire Santé &amp; Assurance FFBB</text>
+      </g>
+      <g transform="translate(0, 306)">
+        <rect width="480" height="48" rx="10" fill="#F8F6F1" stroke="#FF7C32" stroke-opacity="0.3"/>
+        <circle cx="26" cy="24" r="14" fill="#FF7C32"/>
+        <text x="26" y="29" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="800">3</text>
+        <text x="52" y="29" fill="#01009E" font-family="Inter, sans-serif" font-size="14" font-weight="700">Signature électronique horodatée sur le formulaire</text>
+      </g>
+    </g>
+
+    <!-- Right Interactive Form & Signature Pad Mockup -->
+    <g transform="translate(570, 40)">
+      <text x="0" y="18" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="700">Nom &amp; Prénom du licencié</text>
+      <rect x="0" y="28" width="320" height="44" rx="10" fill="#F8F6F1" stroke="#01009E" stroke-opacity="0.2"/>
+      <text x="16" y="55" fill="#01009E" font-family="Inter, sans-serif" font-size="14" font-weight="600">Lucas Moreau</text>
+
+      <text x="345" y="18" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="700">Catégorie souhaitée</text>
+      <rect x="345" y="28" width="325" height="44" rx="10" fill="#F8F6F1" stroke="#FF7C32" stroke-width="1.5"/>
+      <text x="361" y="55" fill="#01009E" font-family="Inter, sans-serif" font-size="14" font-weight="700">Poussins U11 / U12 — 135 €</text>
+
+      <!-- Signature Pad Box -->
+      <text x="0" y="102" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="700">Zone de signature électronique du licencié (ou représentant légal)</text>
+      <rect x="0" y="112" width="670" height="150" rx="12" fill="#F8F6F1" stroke="#FF7C32" stroke-width="1.5" stroke-dasharray="6 6"/>
+      <rect x="14" y="126" width="642" height="122" rx="8" fill="#FFFFFF"/>
+      <path d="M90 205 C140 150, 195 220, 260 172 C310 140, 360 205, 460 178" stroke="#01009E" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <text x="540" y="148" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="700">Effacer la signature</text>
+
+      <!-- Submit Button (#01009E with #FFFFFF text) -->
+      <rect x="0" y="288" width="310" height="52" rx="26" fill="#01009E"/>
+      <text x="155" y="319" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="15" font-weight="700">Signer &amp; Valider ma licence</text>
+      <text x="330" y="319" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="600">✓ Récépissé FFBB envoyé par e-mail</text>
+    </g>
+  </g>
+
+  <!-- ==================== 6. SECTION REDIRECTION SITE MARCHAND ==================== -->
+  <g id="06-Section-Boutique-Marchande" transform="translate(80, 2460)">
+    <rect width="1280" height="220" rx="24" fill="#FFFFFF" stroke="#FF7C32" stroke-width="2"/>
+    <g transform="translate(40, 38)">
+      <rect width="230" height="26" rx="13" fill="#FF7C32" fill-opacity="0.12" stroke="#FF7C32"/>
+      <text x="115" y="17" text-anchor="middle" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">BOUTIQUE OFFICIELLE DU CLUB</text>
+
+      <text x="0" y="64" fill="#01009E" font-family="Inter, sans-serif" font-size="30" font-weight="900">ÉQUIPEZ-VOUS AUX COULEURS DES <tspan fill="#FF7C32">LIONS</tspan></text>
+      <text x="0" y="92" fill="#01009E" font-family="Inter, sans-serif" font-size="14" font-weight="500">Maillots officiels, hoodies, shorts et packs d'entraînement disponibles sur notre site marchand partenaire.</text>
+
+      <g transform="translate(0, 110)">
+        <rect width="330" height="46" rx="23" fill="#01009E"/>
+        <text x="165" y="28" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="14" font-weight="700">Accéder au site marchand officiel ↗</text>
+      </g>
+    </g>
+
+    <!-- 3 Merch Cards Preview -->
+    <g transform="translate(760, 30)">
+      <rect x="0" y="0" width="150" height="160" rx="12" fill="#F8F6F1" stroke="#FF7C32" stroke-width="1.5"/>
+      <text x="75" y="75" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="26" font-weight="900">🏀 #17</text>
+      <text x="75" y="115" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="800">Maillot Officiel</text>
+      <text x="75" y="138" text-anchor="middle" fill="#FF7C32" font-family="Inter, sans-serif" font-size="14" font-weight="800">39,00 €</text>
+
+      <rect x="165" y="0" width="150" height="160" rx="12" fill="#F8F6F1" stroke="#FF7C32" stroke-width="1.5"/>
+      <text x="240" y="75" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="26" font-weight="900">🦁</text>
+      <text x="240" y="115" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="800">Hoodie Lions</text>
+      <text x="240" y="138" text-anchor="middle" fill="#FF7C32" font-family="Inter, sans-serif" font-size="14" font-weight="800">45,00 €</text>
+
+      <rect x="330" y="0" width="150" height="160" rx="12" fill="#F8F6F1" stroke="#FF7C32" stroke-width="1.5"/>
+      <text x="405" y="75" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="26" font-weight="900">🎒</text>
+      <text x="405" y="115" text-anchor="middle" fill="#01009E" font-family="Inter, sans-serif" font-size="13" font-weight="800">Pack Licencié</text>
+      <text x="405" y="138" text-anchor="middle" fill="#FF7C32" font-family="Inter, sans-serif" font-size="14" font-weight="800">65,00 €</text>
+    </g>
+  </g>
+
+  <!-- ==================== 7. SECTION ARTICLES AVEC IMAGES EN BACKGROUND LÉGER ==================== -->
+  <g id="07-Section-Articles-Background-Leger" transform="translate(80, 2730)">
+    <text x="0" y="32" fill="#01009E" font-family="Inter, sans-serif" font-size="32" font-weight="900">ACTUALITÉS &amp; <tspan fill="#FF7C32">ARTICLES</tspan> DU CLUB</text>
+
+    <!-- Article 1 with Light Background Court/Ball Graphic -->
+    <g id="Article-Card-1" transform="translate(0, 56)">
+      <rect width="410" height="240" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <!-- Light background illustration (low opacity) -->
+      <circle cx="330" cy="80" r="85" fill="#FF7C32" fill-opacity="0.08"/>
+      <circle cx="330" cy="80" r="55" stroke="#01009E" stroke-opacity="0.06" stroke-width="4"/>
+      <text x="24" y="38" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">STAGE VACANCES • JEUNES U11 À U17</text>
+      <text x="24" y="70" fill="#01009E" font-family="Inter, sans-serif" font-size="19" font-weight="800">Stage Perfectionnement Toussaint</text>
+      <text x="24" y="94" fill="#01009E" font-family="Inter, sans-serif" font-size="19" font-weight="800">&amp; Hiver au Gymnase du Polygone</text>
+      <text x="24" y="126" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Ateliers de tir, dextérité et tournoi 3x3 encadrés</text>
+      <text x="24" y="146" fill="#01009E" font-family="Inter, sans-serif" font-size="13">par nos éducateurs diplômés d'État.</text>
+      <rect x="24" y="180" width="150" height="38" rx="19" fill="#01009E"/>
+      <text x="99" y="204" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="700">Lire l'article</text>
+    </g>
+
+    <!-- Article 2 with Light Background Graphic -->
+    <g id="Article-Card-2" transform="translate(435, 56)">
+      <rect width="410" height="240" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <path d="M260 220 L340 40 L400 220 Z" fill="#FF7C32" fill-opacity="0.08"/>
+      <circle cx="330" cy="120" r="50" stroke="#01009E" stroke-opacity="0.06" stroke-width="4"/>
+      <text x="24" y="38" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">CHAMPIONNAT RÉGIONAL • SENIORS</text>
+      <text x="24" y="70" fill="#01009E" font-family="Inter, sans-serif" font-size="19" font-weight="800">Victoire des Seniors RM2 dans le</text>
+      <text x="24" y="94" fill="#01009E" font-family="Inter, sans-serif" font-size="19" font-weight="800">derby maritime (78–71)</text>
+      <text x="24" y="126" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Devant 250 supporters au Polygone, les Lions</text>
+      <text x="24" y="146" fill="#01009E" font-family="Inter, sans-serif" font-size="13">conservent la tête de leur poule régionale.</text>
+      <rect x="24" y="180" width="150" height="38" rx="19" fill="#01009E"/>
+      <text x="99" y="204" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="700">Lire l'article</text>
+    </g>
+
+    <!-- Article 3 with Light Background Graphic -->
+    <g id="Article-Card-3" transform="translate(870, 56)">
+      <rect width="410" height="240" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <rect x="250" y="30" width="140" height="100" rx="10" stroke="#01009E" stroke-opacity="0.06" stroke-width="4"/>
+      <circle cx="320" cy="95" r="30" fill="#FF7C32" fill-opacity="0.08"/>
+      <text x="24" y="38" fill="#FF7C32" font-family="Inter, sans-serif" font-size="11" font-weight="800">PARTENAIRES &amp; MÉCÉNAT</text>
+      <text x="24" y="70" fill="#01009E" font-family="Inter, sans-serif" font-size="19" font-weight="800">Rejoignez le Club des Partenaires</text>
+      <text x="24" y="94" fill="#01009E" font-family="Inter, sans-serif" font-size="19" font-weight="800">du Rochefort Basket Club</text>
+      <text x="24" y="126" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Associez votre entreprise aux valeurs du sport</text>
+      <text x="24" y="146" fill="#01009E" font-family="Inter, sans-serif" font-size="13">collectif à Rochefort pour la saison 2026/2027.</text>
+      <rect x="24" y="180" width="150" height="38" rx="19" fill="#01009E"/>
+      <text x="99" y="204" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12" font-weight="700">Nous contacter</text>
+    </g>
+  </g>
+
+  <!-- ==================== 8. SECTION INFOS PRATIQUES & FOOTER ==================== -->
+  <g id="08-Section-Infos-Pratiques" transform="translate(80, 3070)">
+    <text x="0" y="32" fill="#01009E" font-family="Inter, sans-serif" font-size="32" font-weight="900">INFOS <tspan fill="#FF7C32">PRATIQUES</tspan> &amp; CONTACT</text>
+
+    <g transform="translate(0, 56)">
+      <rect width="410" height="190" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <text x="24" y="42" fill="#01009E" font-family="Inter, sans-serif" font-size="18" font-weight="800">📍 Adresse des Gymnases</text>
+      <text x="24" y="72" fill="#01009E" font-family="Inter, sans-serif" font-size="14" font-weight="700">Gymnase Municipal du Polygone</text>
+      <text x="24" y="94" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Rue Charles Maher, 17300 Rochefort</text>
+      <text x="24" y="122" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Salle Annexe : Gymnase Champlain, Rochefort</text>
+      <text x="24" y="146" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Parking gratuit (120 places) • Bus R'Bus</text>
+    </g>
+
+    <g transform="translate(435, 56)">
+      <rect width="410" height="190" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <text x="24" y="42" fill="#01009E" font-family="Inter, sans-serif" font-size="18" font-weight="800">📞 Secrétariat &amp; Permanences</text>
+      <text x="24" y="72" fill="#01009E" font-family="Inter, sans-serif" font-size="14" font-weight="700">Tél. : 05 46 99 17 17 / 06 78 45 17 00</text>
+      <text x="24" y="94" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Email : contact@rochefort-basket-club.fr</text>
+      <text x="24" y="122" fill="#01009E" font-family="Inter, sans-serif" font-size="13">Permanences Bureau : Mercredi 14h–18h30</text>
+      <text x="24" y="146" fill="#01009E" font-family="Inter, sans-serif" font-size="13">&amp; Vendredi 18h00–20h00 au Polygone</text>
+    </g>
+
+    <g transform="translate(870, 56)">
+      <rect width="410" height="190" rx="16" fill="#FFFFFF" stroke="#FF7C32" stroke-width="1.5"/>
+      <text x="24" y="42" fill="#01009E" font-family="Inter, sans-serif" font-size="18" font-weight="800">🏀 Inscriptions &amp; Pass'Sport</text>
+      <text x="24" y="72" fill="#01009E" font-family="Inter, sans-serif" font-size="13">• Pass'Sport, Coupons Sport &amp; Chèques Vacances</text>
+      <text x="24" y="96" fill="#01009E" font-family="Inter, sans-serif" font-size="13">• 2 séances d'essai gratuites en début de saison</text>
+      <rect x="24" y="124" width="362" height="42" rx="21" fill="#01009E"/>
+      <text x="205" y="150" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="13" font-weight="700">Créer ma licence maintenant</text>
+    </g>
+  </g>
+
+  <!-- ==================== 9. FOOTER (#01009E / #FFFFFF) ==================== -->
+  <g id="09-Footer" transform="translate(0, 3380)">
+    <rect width="1440" height="140" fill="#01009E"/>
+    <line x1="0" y1="0" x2="1440" y2="0" stroke="#FF7C32" stroke-width="3"/>
+    <text x="80" y="58" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="18" font-weight="800">ROCHEFORT BASKET CLUB — LES LIONS DE CHARENTE-MARITIME (17)</text>
+    <text x="80" y="86" fill="#FFFFFF" fill-opacity="0.75" font-family="Inter, sans-serif" font-size="13">Gymnase Municipal du Polygone, Rue Charles Maher, 17300 Rochefort • contact@rochefort-basket-club.fr</text>
+    <text x="1360" y="72" text-anchor="end" fill="#FF7C32" font-family="Inter, sans-serif" font-size="13" font-weight="700">Palette : #F8F6F1 • #01009E • #01009E • #FF7C32</text>
+  </g>
+</svg>
