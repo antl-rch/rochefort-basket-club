@@ -127,3 +127,15 @@ test('responsive aux largeurs intermédiaires et étroites', async ({ page }) =>
     ).toBe(true);
   }
 });
+
+test('modifier le dossier impose une nouvelle signature', async ({ page }) => {
+  await fillApplication(page);
+  await page.getByText('Ou saisir le nom du signataire').click();
+  await page.getByLabel('Nom complet du signataire').fill('Camille Martin');
+  await page.getByRole('button', { name: 'Signer avec ce nom' }).click();
+  await page.getByRole('button', { name: 'Retour', exact: true }).click();
+  await page.getByLabel('Prénom', { exact: true }).fill('Alex');
+  await page.getByRole('button', { name: 'Continuer vers la signature' }).click();
+  await expect(page.getByRole('button', { name: 'Valider la signature' })).toBeDisabled();
+  await expect(page.getByText('Alex Martin · Seniors')).toBeVisible();
+});
