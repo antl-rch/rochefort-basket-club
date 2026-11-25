@@ -7,7 +7,12 @@ export function Brand({ compact = false }: { compact?: boolean }) {
       className={`brand ${compact ? 'brand--compact' : ''}`}
       aria-label="Rochefort Basket Club"
     >
-      <img src="/images/imgLogoOfficielRochefortBasketClub.png" width="48" height="48" alt="" />
+      <img
+        src={`${import.meta.env.BASE_URL}images/imgLogoOfficielRochefortBasketClub.png`}
+        width="48"
+        height="48"
+        alt=""
+      />
       <span>
         ROCHEFORT
         <br />

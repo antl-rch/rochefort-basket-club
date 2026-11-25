@@ -1,3 +1,4 @@
+import { SectionLink } from './views/components/sectionLink/SectionLink';
 import { lazy, Suspense, useEffect } from 'react';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -18,9 +19,9 @@ export default function App() {
   }, [pathname]);
   return (
     <>
-      <a className="skip-link" href="#main-content">
+      <SectionLink className="skip-link" targetId="main-content">
         {t('nav.skip')}
-      </a>
+      </SectionLink>
       <Suspense
         fallback={
           <main aria-busy="true" className="container loading">

@@ -11,7 +11,9 @@ npm ci
 npm run dev
 ```
 
-Site : http://127.0.0.1:5178. Routes : `/` et `/licence`.
+Site local : http://127.0.0.1:5178. Routes locales : `/` et `/licence`.
+
+Site publié : https://antl-rch.github.io/rochefort-basket-club/. La licence est accessible à `/#/licence` sous ce chemin.
 
 ```sh
 npm run build
@@ -49,6 +51,8 @@ docs/design-source/    Aperçu et fichiers de conception antérieurs conservés
 
 Les données métier (catégories et créneaux) sont séparées des textes traduits. Les identifiants restent stables dans les deux langues. i18next/react-i18next gèrent les traductions ; seule la préférence de langue est conservée dans le navigateur. Les polices Nunito et DM Sans sont hébergées localement. Les icônes proviennent de react-icons.
 
+Les sélecteurs utilisent le composant générique `AppSelect`, fondé sur `react-select`. Leur hauteur et celle des champs partagent le token `--field-height` (45 px). Le sélecteur conserve la validation obligatoire du formulaire et la navigation clavier.
+
 ## Licence et signature
 
 Le parcours contient des champs validés, une signature manuscrite via `signature_pad`, une alternative au clavier, un récapitulatif et un export HTML autonome imprimable. La signature est conservée lors des retours entre étapes. Les informations du dossier restent en mémoire jusqu’à la sortie de la page ; elles ne sont ni stockées dans le navigateur ni envoyées à un serveur.
@@ -66,4 +70,17 @@ Le site est statique : le dernier bouton télécharge le dossier et la confirmat
 
 Les tests couvrent le chargement des 11 assets de conception (12 images avec le logo répété), les deux langues, la persistance de langue, les champs requis, le dessin et l’effacement de signature, les retours entre étapes, l’export réel du dossier et le responsive à 320, 390, 768, 1024 et 1440 pixels. Les captures générées sont dans `artifacts/` et restent locales.
 
-Pour l’hébergement, configurer le fallback des routes vers `index.html` afin que `/licence` reste accessible en chargement direct. `dist/` est la sortie statique du build.
+## GitHub Pages
+
+Chaque push sur `main` exécute le formatage, le lint, le build et les tests navigateur. Une fois ces contrôles réussis, le job `deploy` reconstruit le site avec `GITHUB_PAGES=true`, publie les fichiers de `dist/` sur la branche générée `gh-pages`, puis demande un build Pages. Cette méthode évite de dépendre du quota d’artefacts Actions pour la publication. Ne pas modifier manuellement `gh-pages`.
+
+Le build Pages utilise `/rochefort-basket-club/` comme chemin de base et `HashRouter` pour que les rechargements et liens directs fonctionnent sans réécriture serveur. Les liens de sections défilent dans la page sans interférer avec les routes. Le développement conserve `BrowserRouter` et les URL usuelles.
+
+Pour vérifier le build Pages localement :
+
+```sh
+GITHUB_PAGES=true npm run build
+GITHUB_PAGES=true npm run preview
+```
+
+Pour un autre hébergement à la racine, `npm run build` conserve la base `/` ; configurer alors le fallback des routes vers `index.html`. `dist/` est la sortie statique du build.

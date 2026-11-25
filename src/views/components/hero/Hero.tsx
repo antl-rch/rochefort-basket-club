@@ -1,3 +1,4 @@
+import { SectionLink } from '../sectionLink/SectionLink';
 import { useTranslation } from 'react-i18next';
 import { FiArrowDown } from 'react-icons/fi';
 import { ButtonLink } from '../button/Button';
@@ -15,11 +16,11 @@ export function Hero() {
         <p className="hero__description">{t('hero.description')}</p>
         <div className="hero__actions">
           <ButtonLink to="/licence">{t('nav.licence')}</ButtonLink>
-          <a href="#planning" className="text-link">
+          <SectionLink targetId="planning" className="text-link">
             <span className="desktop-label">{t('hero.planning')}</span>
             <span className="mobile-label">{t('nav.planning')}</span>
             <FiArrowDown />
-          </a>
+          </SectionLink>
         </div>
       </div>
       <ClubPhoto photo="hero" priority />

@@ -4,6 +4,7 @@ import { useLicence } from '../../../hooks/useLicence';
 import { useClub } from '../../../hooks/useClub';
 import { FormField } from '../formField/FormField';
 import { Button } from '../button/Button';
+import { AppSelect } from '../appSelect/AppSelect';
 import type { LicenceDraft } from '../../../utils/types/club';
 
 export function LicenceForm({ onContinue }: { onContinue: () => void }) {
@@ -68,19 +69,14 @@ export function LicenceForm({ onContinue }: { onContinue: () => void }) {
           />
         </FormField>
         <FormField id="category" label={t('licence.category')}>
-          <select
+          <AppSelect
             id="category"
             required
             value={draft.category}
-            onChange={(event) => update('category', event.target.value)}
-          >
-            <option value="">{t('licence.choose')}</option>
-            {data.teams.map((team) => (
-              <option key={team.id} value={team.id}>
-                {t(`teams.${team.id}`)}
-              </option>
-            ))}
-          </select>
+            options={data.teams.map((team) => ({ value: team.id, label: t(`teams.${team.id}`) }))}
+            placeholder={t('licence.choose')}
+            onChange={(value) => update('category', value)}
+          />
         </FormField>
         <FormField id="email" label={t('licence.email')}>
           <input

@@ -1,5 +1,6 @@
 name: Validation
 on:
+  workflow_dispatch:
   push:
     branches: [main]
   pull_request:
@@ -29,3 +30,41 @@ jobs:
             artifacts/
             test-results/
           retention-days: 7
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: https://antl-rch.github.io/rochefort-basket-club/
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          GITHUB_PAGES: 'true'
+      - name: Publish static files
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          touch dist/.nojekyll
+          git -C dist init -b gh-pages
+          git -C dist config user.name 'github-actions[bot]'
+          git -C dist config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C dist add .
+          git -C dist commit -m "Deploy ${GITHUB_SHA}"
+          git fetch origin gh-pages
+          git -C dist remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          gh auth setup-git
+          git -C dist push origin gh-pages --force-with-lease="refs/heads/gh-pages:$(git rev-parse origin/gh-pages)"
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"

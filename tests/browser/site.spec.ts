@@ -6,7 +6,8 @@ async function fillApplication(page: Page) {
   await page.getByLabel('Prénom', { exact: true }).fill('Camille');
   await page.getByLabel('Nom', { exact: true }).fill('Martin');
   await page.getByLabel('Date de naissance').fill('2002-08-12');
-  await page.getByLabel('Catégorie souhaitée').selectOption('senior');
+  await page.getByRole('combobox', { name: 'Catégorie souhaitée' }).press('ArrowDown');
+  await page.getByRole('option', { name: 'Seniors', exact: true }).click();
   await page.getByLabel('E-mail', { exact: true }).fill('camille@example.com');
   await page.getByRole('button', { name: 'Continuer vers la signature' }).click();
 }
@@ -126,6 +127,23 @@ test('responsive aux largeurs intermédiaires et étroites', async ({ page }) =>
       `EN overflow at ${width}px`,
     ).toBe(true);
   }
+});
+
+test('react-select a la même hauteur que les inputs et fonctionne au clic', async ({
+  page,
+}, testInfo) => {
+  await page.goto('/licence');
+  const inputHeight = await page
+    .locator('#firstName')
+    .evaluate((input) => input.getBoundingClientRect().height);
+  const control = page.locator('.app-select__control');
+  expect(await control.evaluate((element) => element.getBoundingClientRect().height)).toBe(
+    inputHeight,
+  );
+  await control.click();
+  await page.getByRole('option', { name: 'Jeunes', exact: true }).click();
+  await expect(page.locator('.app-select__single-value')).toHaveText('Jeunes');
+  await page.screenshot({ path: `artifacts/select-${testInfo.project.name}.png`, fullPage: true });
 });
 
 test('modifier le dossier impose une nouvelle signature', async ({ page }) => {

@@ -65,17 +65,61 @@
   font-size: 14px;
   line-height: 18px;
 }
-input,
-select {
+.form-field > input,
+.signature-field details input {
   width: 100%;
   color: var(--ink);
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 3px;
   padding: 11px 13px;
-  min-height: 45px;
+  height: var(--field-height);
   font-size: 15px;
   line-height: 21px;
+}
+.app-select {
+  width: 100%;
+  font-size: 15px;
+  line-height: 21px;
+}
+.app-select .app-select__control {
+  height: var(--field-height);
+  min-height: var(--field-height);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--white);
+  cursor: pointer;
+}
+.app-select .app-select__control--is-focused {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+}
+.app-select .app-select__value-container {
+  padding: 0 13px;
+}
+.app-select .app-select__indicator {
+  padding: 10px;
+}
+.app-select .app-select__menu {
+  z-index: 5;
+  margin-top: 8px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--white);
+  box-shadow: 0 6px 18px rgb(1 0 158 / 10%);
+}
+.app-select .app-select__option {
+  padding: 10px 9px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.app-select .app-select__option--is-focused {
+  background: var(--soft);
+}
+.app-select .app-select__option--is-selected {
+  background: var(--ink);
+  color: var(--white);
 }
 .signature-field {
   width: 100%;

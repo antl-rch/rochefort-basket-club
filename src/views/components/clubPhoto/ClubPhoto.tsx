@@ -26,7 +26,7 @@ export function ClubPhoto({
   return (
     <div className={`club-photo club-photo--${photo} ${className}`}>
       <img
-        src={`/images/${photoAssets[photo]}.png`}
+        src={`${import.meta.env.BASE_URL}images/${photoAssets[photo]}.png`}
         alt={t(`photos.${photo}`)}
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}

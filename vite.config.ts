@@ -1,4 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({ plugins: [react()], server: { port: 5178, strictPort: true } });
+export default defineConfig({
+  base: process.env.GITHUB_PAGES === 'true' ? '/rochefort-basket-club/' : '/',
+  plugins: [react()],
+  server: { port: 5178, strictPort: true },
+});

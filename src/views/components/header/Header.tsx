@@ -1,3 +1,4 @@
+import { SectionLink } from '../sectionLink/SectionLink';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FiX, FiArrowUpRight } from 'react-icons/fi';
@@ -17,9 +18,9 @@ export function Header({ licence = false }: { licence?: boolean }) {
         ) : (
           <>
             <nav className="header__nav" aria-label="Navigation">
-              <a href="#equipes">{t('nav.teams')}</a>
-              <a href="#planning">{t('nav.planning')}</a>
-              <a href="#infos">{t('nav.info')}</a>
+              <SectionLink targetId="equipes">{t('nav.teams')}</SectionLink>
+              <SectionLink targetId="planning">{t('nav.planning')}</SectionLink>
+              <SectionLink targetId="infos">{t('nav.info')}</SectionLink>
               <a href="#">
                 {t('nav.shop')} <FiArrowUpRight />
               </a>
